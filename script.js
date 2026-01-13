@@ -148,11 +148,27 @@ function updateLanguageButton(lang) {
     }
 }
 
+function setupCvLink(lang) {
+    const cvLink = document.getElementById("cvLink");
+    if (!cvLink) return;
+
+    if (lang === "en") {
+        cvLink.href = "https://1drv.ms/w/c/fa3719a8c2486651/IQAMDdEMjN0LR6T94-dtVZnfAZ6Ka5w2w2rcCYPNobGHTNk?e=I1yZRb"; // versão em inglês
+        cvLink.setAttribute("aria-label", "Download Resume");
+    } else {
+        cvLink.href = "https://1drv.ms/w/c/fa3719a8c2486651/IQAB_qYnQpN3SK6_rwo6NEBFASQlJ1yUrf-YBrcQAfXs8to?e=ZWmBKm"; // versão em português
+        cvLink.setAttribute("aria-label", "Download Currículo");
+    }
+}
+
 function setLanguage(lang) {
     document.body.setAttribute('data-lang', lang);
     localStorage.setItem('language', lang);
     updateLanguageButton(lang);
     translatePage(lang);
+
+    // Atualiza o link do CV conforme idioma
+    setupCvLink(lang);
 }
 
 // ===== TRADUÇÃO =====
@@ -188,15 +204,14 @@ const translations = {
         'experience.1.1': 'Definição do escopo e modelagem de dados (DER) para projeto no mercado de moda do Ceará.',
         'experience.1.2': 'Coleta, limpeza e preparação de datasets utilizando Python e bibliotecas de análise.',
         'experience.1.3': 'Realização de Análise Exploratória de Dados (EDA) e cálculo de estatísticas descritivas.',
-        'experience.1.4': 'Implementação de modelo de machine learning (Random Forest) com avaliação de métricas.',
-        'experience.1.5': 'Geração de dashboards interativos e relatórios para alta gestão.',
+        'experience.1.4': 'Geração de dashboards interativos e relatórios para alta gestão utilizando Power BI.',
         
         'experience.2.title': 'Analista de Dados',
         'experience.2.1': 'Definição do escopo e modelagem de dados (DER) para projeto no mercado de moda do Ceará.',
         'experience.2.2': 'Coleta, limpeza e preparação de datasets utilizando Python e bibliotecas de análise.',
         'experience.2.3': 'Realização de Análise Exploratória de Dados (EDA) e cálculo de estatísticas descritivas.',
         'experience.2.4': 'Implementação de modelo de machine learning (Random Forest) com avaliação de métricas.',
-        'experience.2.5': 'Geração de dashboards interativos e relatórios para alta gestão.',
+        'experience.2.5': 'Geração de dashboards interativos e relatórios para alta gestão utilizando Streamlit.',
         
         'experience.3.title': 'Analista de Marketing e Comercial',
         'experience.3.1': 'Planejamento e gestão de campanhas digitais (Google Ads, Meta Ads) com monitoramento de KPIs.',
@@ -293,15 +308,14 @@ const translations = {
         'experience.1.1': 'Definition of scope and data modeling (ERD) for a project in the Ceará fashion market.',
         'experience.1.2': 'Collection, cleaning, and preparation of datasets using Python and analysis libraries.',
         'experience.1.3': 'Performance of Exploratory Data Analysis (EDA) and calculation of descriptive statistics.',
-        'experience.1.4': 'Implementation of machine learning model (Random Forest) with metric evaluation.',
-        'experience.1.5': 'Generation of interactive dashboards and reports for senior management.',
+        'experience.1.4': 'Generation of interactive dashboards and reports for senior management using Power BI.',
 
         'experience.2.title': 'Data Analyst',
         'experience.2.1': 'Definition of scope and data modeling (ERD) for a project in the Ceará fashion market.',
         'experience.2.2': 'Collection, cleaning, and preparation of datasets using Python and analysis libraries.',
         'experience.2.3': 'Performance of Exploratory Data Analysis (EDA) and calculation of descriptive statistics.',
         'experience.2.4': 'Implementation of machine learning model (Random Forest) with metric evaluation.',
-        'experience.2.5': 'Generation of interactive dashboards and reports for senior management.',
+        'experience.2.5': 'Generation of interactive dashboards and reports for senior management using Streamlit.',
         
         'experience.3.title': 'Marketing and Commercial Analyst',
         'experience.3.1': 'Planning and management of digital campaigns (Google Ads, Meta Ads) with KPI monitoring.',
