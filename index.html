@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Cavalcante | Analista de Dados & IA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 0 0 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: var(--gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: var(--primary);
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray);
+        }
+
+        .contact-item i {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Experience */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--gray-light);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 40px;
+        }
+
+        .timeline-date {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            padding: 5px 10px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .timeline-content {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .timeline-content h4 {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .timeline-content ul {
+            padding-left: 20px;
+        }
+
+        .timeline-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-category h3 i {
+            font-size: 1.2rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: var(--gray-light);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Certifications */
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .cert-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .cert-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .cert-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .cert-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+
+        .cert-link {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .cert-link:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Languages */
+        .languages-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .language-item {
+            text-align: center;
+            flex: 0 0 150px;
+        }
+
+        .language-level {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: var(--gray-light);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image {
+                flex: 0 0 250px;
+                width: 250px;
+                height: 250px;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">LC</div>
+                <div class="nav-links" id="navLinks">
+                    <a href="#home">Início</a>
+                    <a href="#experience">Experiência</a>
+                    <a href="#skills">Habilidades</a>
+                    <a href="#certifications">Certificações</a>
+                    <a href="#languages">Idiomas</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Lucas Cavalcante dos Santos</h1>
+                    <h2>Analista de Dados | IA & Machine Learning | Visão Computacional</h2>
+                    <p>Analista de Dados com experiência em projetos de IA, automação e marketing digital. Especializado no desenvolvimento de chatbots, dashboards interativos, pipelines de dados de séries temporais e geoespaciais, e implementação de estratégias de SEO/SEM.</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Fortaleza - CE</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>(85) 9 9685-9051</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>cavalcanteprofissional@outlook.com</span>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/cavalcante-Lucas" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/cavalcanteprofissional" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:cavalcanteprofissional@outlook.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Substituir por imagem de perfil se disponível -->
+                    <img src="assets/foto-perfil.jpeg" alt="Lucas Cavalcante">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experiência Profissional</h2>
+            
+            <div class="timeline">
+                <!-- Experiência 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content">
+                        <h3>Analista de Dados</h3>
+                        <h4>ZENTS | Jan 2025 - Jun 2025</h4>
+                        <ul>
+                            <li>Definição do escopo e modelagem de dados (DER) para projeto no mercado de moda do Ceará.</li>
+                            <li>Coleta, limpeza e preparação de datasets utilizando Python e bibliotecas de análise.</li>
+                            <li>Realização de Análise Exploratória de Dados (EDA) e cálculo de estatísticas descritivas.</li>
+                            <li>Implementação de modelo de machine learning (Random Forest) com avaliação de métricas.</li>
+                            <li>Geração de dashboards interativos e relatórios para alta gestão.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experiência 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2024-25</div>
+                    <div class="timeline-content">
+                        <h3>Analista de Marketing e Comercial</h3>
+                        <h4>Iselétrica LTDA. | 2024 - 2025</h4>
+                        <ul>
+                            <li>Planejamento e gestão de campanhas digitais (Google Ads, Meta Ads) com monitoramento de KPIs.</li>
+                            <li>Implementação de estratégias de SEO e SEM, resultando em aumento do tráfego orgânico.</li>
+                            <li>Criação e edição de conteúdo audiovisual para redes sociais e funis de vendas.</li>
+                            <li>Gerenciamento de CRM via ERP interno.</li>
+                            <li>Suporte à equipe comercial na prospecção e fidelização de clientes.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Experiência 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">2022-24</div>
+                    <div class="timeline-content">
+                        <h3>Analista de Marketing | Assistente de Marketing</h3>
+                        <h4>Instituto de Educação Portal | 2022 - 2024</h4>
+                        <ul>
+                            <li>Desenvolvimento e monitoramento de campanhas promocionais.</li>
+                            <li>Implementação de estratégias de SEO/SEM e gestão de conteúdo para site e redes sociais.</li>
+                            <li>Criação de conteúdo gráfico e manutenção dos canais de comunicação digitais.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Habilidades Técnicas</h2>
+            
+            <div class="skills-container">
+                <!-- Linguagens -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Linguagens & Bibliotecas</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">TensorFlow/Keras</span>
+                    </div>
+                </div>
+                
+                <!-- Machine Learning -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> Machine Learning</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Random Forest</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">LightGBM</span>
+                        <span class="skill-tag">Gradient Boosting</span>
+                        <span class="skill-tag">CatBoost</span>
+                        <span class="skill-tag">Regressão Linear</span>
+                        <span class="skill-tag">KNN</span>
+                        <span class="skill-tag">SVR</span>
+                        <span class="skill-tag">NLP</span>
+                        <span class="skill-tag">NLTK</span>
+                        <span class="skill-tag">Word2Vec</span>
+                    </div>
+                </div>
+                
+                <!-- Deep Learning & Visão Computacional -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-eye"></i> Deep Learning & Visão Computacional</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">TensorFlow/Keras</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">CNNs</span>
+                        <span class="skill-tag">RNNs/LSTMs</span>
+                        <span class="skill-tag">YOLO</span>
+                        <span class="skill-tag">OpenCV</span>
+                    </div>
+                </div>
+                
+                <!-- Plataformas & Ferramentas -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Plataformas & Ferramentas</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">GCP</span>
+                        <span class="skill-tag">Tableau</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Scrum</span>
+                        <span class="skill-tag">Kanban</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certificações</h2>
+            <p style="text-align: center; margin-bottom: 40px; color: var(--gray);">Clique nos links para visualizar os certificados</p>
+            
+            <div class="certifications-container">
+                <!-- Certificação 1 -->
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Inteligência Artificial</h3>
+                    <p>Universidade Federal do Ceará | 2026</p>
+                    <a href="certificados/ia-ufc.pdf" class="cert-link" target="_blank">Ver Certificado</a>
+                </div>
+                
+                <!-- Certificação 2 -->
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Administração de Banco de Dados</h3>
+                    <p>Faculdade Metropolitana | 2025</p>
+                    <a href="certificados/bd-facmetro.pdf" class="cert-link" target="_blank">Ver Certificado</a>
+                </div>
+                
+                <!-- Certificação 3 -->
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Engenharia de Software</h3>
+                    <p>Faculdade Metropolitana | 2025</p>
+                    <a href="certificados/engenharia-facmetro.pdf" class="cert-link" target="_blank">Ver Certificado</a>
+                </div>
+                
+                <!-- Certificação 4 -->
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Ciência de Dados</h3>
+                    <p>Universidade Estadual do Ceará | 2024</p>
+                    <a href="certificados/ciencia-dados-uece.pdf" class="cert-link" target="_blank">Ver Certificado</a>
+                </div>
+                
+                <!-- Certificação 5 -->
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>AWS Cloud Practitioner</h3>
+                    <p>Digital Innovation One | 2023</p>
+                    <a href="certificados/aws-dio.pdf" class="cert-link" target="_blank">Ver Certificado</a>
+                </div>
+                
+                <!-- Certificação 6 -->
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>DevOps</h3>
+                    <p>Ada Tech | 2024</p>
+                    <a href="certificados/devops-ada.pdf" class="cert-link" target="_blank">Ver Certificado</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages">
+        <div class="container">
+            <h2 class="section-title">Idiomas</h2>
+            
+            <div class="languages-container">
+                <div class="language-item">
+                    <h3>Português</h3>
+                    <div class="language-level">Nativo</div>
+                    <div style="margin-top: 10px;">
+                        <i class="fas fa-star" style="color: #fbbf24;"></i>
+                        <i class="fas fa-star" style="color: #fbbf24;"></i>
+                        <i class="fas fa-star" style="color: #fbbf24;"></i>
+                        <i class="fas fa-star" style="color: #fbbf24;"></i>
+                        <i class="fas fa-star" style="color: #fbbf24;"></i>
+                    </div>
+                </div>
+                
+                <div class="language-item">
+                    <h3>Inglês</h3>
+                    <div class="language-level">Avançado</div>
+                    <div style="margin-top: 10px;">
+                        <i class="fas fa-star" style="color: #fbbf24;"></i>
+                        <i class="fas fa-star" style="color: #fbbf24;"></i>
+                        <i class="fas fa-star" style="color: #fbbf24;"></i>
+                        <i class="fas fa-star" style="color: #fbbf24;"></i>
+                        <i class="fas fa-star" style="color: #d1d5db;"></i>
+                    </div>
+                </div>
+                
+                <div class="language-item">
+                    <h3>Espanhol</h3>
+                    <div class="language-level">Básico</div>
+                    <div style="margin-top: 10px;">
+                        <i class="fas fa-star" style="color: #fbbf24;"></i>
+                        <i class="fas fa-star" style="color: #fbbf24;"></i>
+                        <i class="fas fa-star" style="color: #d1d5db;"></i>
+                        <i class="fas fa-star" style="color: #d1d5db;"></i>
+                        <i class="fas fa-star" style="color: #d1d5db;"></i>
+                    </div>
+                </div>
+                
+                <div class="language-item">
+                    <h3>Japonês</h3>
+                    <div class="language-level">Básico</div>
+                    <div style="margin-top: 10px;">
+                        <i class="fas fa-star" style="color: #fbbf24;"></i>
+                        <i class="fas fa-star" style="color: #d1d5db;"></i>
+                        <i class="fas fa-star" style="color: #d1d5db;"></i>
+                        <i class="fas fa-star" style="color: #d1d5db;"></i>
+                        <i class="fas fa-star" style="color: #d1d5db;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2>Entre em Contato</h2>
+                <p>Estou sempre aberto a novas oportunidades e colaborações.</p>
+                
+                <div class="contact-info" style="color: white; justify-content: center;">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>cavalcanteprofissional@outlook.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(85) 9 9685-9051</span>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/cavalcante-Lucas" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/cavalcanteprofissional" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:cavalcanteprofissional@outlook.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <div class="copyright">
+                    &copy; 2025 Lucas Cavalcante. Todos os direitos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Menu mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
