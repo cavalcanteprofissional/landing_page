@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Configurar links de certificados
     setupCertificateLinks();
-    
+
     setupCertificateLinksAlternative();
 });
 
@@ -155,7 +155,7 @@ function updateLanguageButton(lang) {
 // ===== GERENCIAMENTO DE CV =====
 function setupCvLink(lang) {
     const cvLinks = document.querySelectorAll(".cv-download-link");
-    
+
     cvLinks.forEach(link => {
         if (lang === "en") {
             link.href = "assets/certificados/cv_en_lucas_cavalcante.pdf";
@@ -179,7 +179,7 @@ function setupCvLink(lang) {
 // ===== GERENCIAMENTO DE CERTIFICADOS =====
 function setupCertificateLinks() {
     console.log("Configurando links dos certificados...");
-    
+
     const certificateFiles = {
         'cert1Link': 'montagem_manutencao.pdf',
         'cert2Link': 'design_grafico.pdf',
@@ -191,7 +191,7 @@ function setupCertificateLinks() {
         'cert8Link': 'engenharia_software.pdf',
         'cert9Link': 'banco_dados.pdf'
     };
-    
+
     Object.entries(certificateFiles).forEach(([id, file]) => {
         const link = document.getElementById(id);
         if (link) {
@@ -199,31 +199,31 @@ function setupCertificateLinks() {
             link.href = `assets/certificados/${file}`;
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
-            
+
             // Remove o atributo download se existir
             if (link.hasAttribute('download')) {
                 link.removeAttribute('download');
             }
-            
+
             // Adiciona título para acessibilidade
             link.title = `Visualizar certificado: ${file.replace('.pdf', '').replace(/_/g, ' ')}`;
-            
+
             // Evento de clique para logging
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 console.log(`Abrindo certificado: ${file}`);
             });
         } else {
             console.warn(`Elemento com ID ${id} não encontrado`);
         }
     });
-    
+
     console.log("✅ Links dos certificados configurados!");
 }
 
 // ===== SOLUÇÃO ALTERNATIVA PARA CERTIFICADOS =====
 function setupCertificateLinksAlternative() {
     console.log("🔄 Usando solução alternativa para certificados...");
-    
+
     const certificateFiles = {
         'cert1Link': 'montagem_manutencao.pdf',
         'cert2Link': 'design_grafico.pdf',
@@ -235,39 +235,39 @@ function setupCertificateLinksAlternative() {
         'cert8Link': 'engenharia_software.pdf',
         'cert9Link': 'banco_dados.pdf'
     };
-    
+
     Object.entries(certificateFiles).forEach(([id, file]) => {
         const link = document.getElementById(id);
         if (link) {
             // Substituir completamente o comportamento do link
-            link.onclick = function(e) {
+            link.onclick = function (e) {
                 e.preventDefault();
-                
+
                 // Determinar o caminho base
                 let basePath = 'assets/certificados/';
                 const currentPath = window.location.pathname;
-                
+
                 if (currentPath.includes('/index.html') || currentPath.endsWith('/')) {
                     basePath = './assets/certificados/';
                 }
-                
+
                 const fileUrl = basePath + file;
                 console.log(`📤 Abrindo: ${fileUrl}`);
-                
+
                 // Abrir em nova janela
                 window.open(fileUrl, '_blank', 'noopener,noreferrer');
-                
+
                 return false;
             };
-            
+
             // Remover href original para prevenir comportamento padrão
             link.removeAttribute('href');
             link.style.cursor = 'pointer';
-            
+
             console.log(`✅ ${id} configurado: ${file}`);
         }
     });
-    
+
     console.log("✅ Solução alternativa aplicada!");
 }
 
@@ -278,15 +278,15 @@ function setLanguage(lang) {
     if (!validLanguages.includes(lang)) {
         lang = 'pt'; // Fallback para português
     }
-    
+
     console.log(`Alterando idioma para: ${lang}`);
-    
+
     document.body.setAttribute('data-lang', lang);
     localStorage.setItem('language', lang);
-    
+
     updateLanguageButton(lang);
     translatePage(lang);
-    
+
     // Atualiza os links do CV
     setupCvLink(lang);
 }
@@ -357,7 +357,7 @@ const translations = {
         'skills.dl': 'Deep Learning & Visão Computacional',
         'skills.platforms': 'Plataformas & Ferramentas',
         'skills.marketing': 'Marketing Digital',
-        'skills.tech': 'Técnico em TI',
+        'skills.tech': 'Técnico em TI e Redes',
         'skills.agile': 'Gestão Ágil',
         'skills.office': 'Microsoft Office',
         'skills.soft': 'Habilidades Interpessoais',
@@ -460,7 +460,7 @@ const translations = {
         'skills.dl': 'Deep Learning & Computer Vision',
         'skills.platforms': 'Platforms & Tools',
         'skills.marketing': 'Digital Marketing',
-        'skills.tech': 'IT Technician',
+        'skills.tech': 'IT Technician and Networks',
         'skills.agile': 'Agile Management',
         'skills.office': 'Microsoft Office',
         'skills.soft': 'Soft Skills',
@@ -483,7 +483,7 @@ const translations = {
         'cert.7.title': 'Systems Analysis and Development',
         'cert.8.title': 'Software Engineering',
         'cert.9.title': 'Database Administration',
-        
+
         // Languages
         'lang.portuguese': 'Portuguese',
         'lang.english': 'English',
@@ -563,7 +563,7 @@ const translations = {
         'skills.dl': 'Deep Learning & Visión Computacional',
         'skills.platforms': 'Plataformas & Herramientas',
         'skills.marketing': 'Marketing Digital',
-        'skills.tech': 'Técnico en TI',
+        'skills.tech': 'Técnico en TI y Redes',
         'skills.agile': 'Gestión Ágil',
         'skills.office': 'Microsoft Office',
         'skills.soft': 'Habilidades Interpersonales',
@@ -715,7 +715,7 @@ function setupAnimations() {
 // ===== CACHE =====
 window.addEventListener('beforeunload', function () {
     const currentTheme = document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
-    const currentLang = document.body.getAttribute('data-lang') || 'pt' || 'en' || 'es';
+    const currentLang = document.body.getAttribute('data-lang') || 'pt';
 
     localStorage.setItem('theme', currentTheme);
     localStorage.setItem('language', currentLang);
