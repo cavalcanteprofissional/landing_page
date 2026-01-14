@@ -183,13 +183,14 @@ function setupCertificateLinks() {
     const certificateFiles = {
         'cert1Link': 'montagem_manutencao.pdf',
         'cert2Link': 'design_grafico.pdf',
-        'cert3Link': 'ciencias_sociais_ufc.pdf',
-        'cert4Link': 'fullstack_iel.pdf',
-        'cert5Link': 'devops_ada.pdf',
-        'cert6Link': 'ciencia_dados_uece.pdf',
-        'cert7Link': 'ads_unifor.pdf',
-        'cert8Link': 'engenharia_software.pdf',
-        'cert9Link': 'banco_dados.pdf'
+        'cert3Link': 'pjd_estacio.pdf',
+        'cert4Link': 'ciencias_sociais_ufc.pdf',
+        'cert5Link': 'fullstack_iel.pdf',
+        'cert6Link': 'devops_ada.pdf',
+        'cert7Link': 'ciencia_dados_uece.pdf',
+        'cert8Link': 'ads_unifor.pdf',
+        'cert9Link': 'engenharia_software.pdf',
+        'cert10Link': 'banco_dados.pdf'
     };
 
     Object.entries(certificateFiles).forEach(([id, file]) => {
@@ -227,13 +228,14 @@ function setupCertificateLinksAlternative() {
     const certificateFiles = {
         'cert1Link': 'montagem_manutencao.pdf',
         'cert2Link': 'design_grafico.pdf',
-        'cert3Link': 'ciencias_sociais_ufc.pdf',
-        'cert4Link': 'fullstack_iel.pdf',
-        'cert5Link': 'devops_ada.pdf',
-        'cert6Link': 'ciencia_dados_uece.pdf',
-        'cert7Link': 'ads_unifor.pdf',
-        'cert8Link': 'engenharia_software.pdf',
-        'cert9Link': 'banco_dados.pdf'
+        'cert3Link': 'pjd_estacio.pdf',
+        'cert4Link': 'ciencias_sociais_ufc.pdf',
+        'cert5Link': 'fullstack_iel.pdf',
+        'cert6Link': 'devops_ada.pdf',
+        'cert7Link': 'ciencia_dados_uece.pdf',
+        'cert8Link': 'ads_unifor.pdf',
+        'cert9Link': 'engenharia_software.pdf',
+        'cert10Link': 'banco_dados.pdf'
     };
 
     Object.entries(certificateFiles).forEach(([id, file]) => {
@@ -373,13 +375,14 @@ const translations = {
         'certifications.subtitle': 'Clique nos links para visualizar os certificados',
         'cert.1.title': 'Montagem e Manutenção de Computadores',
         'cert.2.title': 'Design Gráfico & Web Design',
-        'cert.3.title': 'Ciências Sociais',
-        'cert.4.title': 'Desenvolvedor FullStack',
-        'cert.5.title': 'DevOps',
-        'cert.6.title': 'Ciência de Dados',
-        'cert.7.title': 'Análise e Desenvolvimento de Sistemas',
-        'cert.8.title': 'Engenharia de Software',
-        'cert.9.title': 'Administração de Banco de Dados',
+        'cert.3.title': 'Programação de Jogos Digitais',
+        'cert.4.title': 'Ciências Sociais',
+        'cert.5.title': 'Desenvolvedor FullStack',
+        'cert.6.title': 'DevOps',
+        'cert.7.title': 'Ciência de Dados',
+        'cert.8.title': 'Análise e Desenvolvimento de Sistemas',
+        'cert.9.title': 'Engenharia de Software',
+        'cert.10.title': 'Administração de Banco de Dados',
 
         // Idiomas
         'lang.portuguese': 'Português',
@@ -476,13 +479,14 @@ const translations = {
         'certifications.subtitle': 'Click on links to view certificates',
         'cert.1.title': 'Computer Assembly and Maintenance',
         'cert.2.title': 'Graphic Design & Web Design',
-        'cert.3.title': 'Social Sciences',
-        'cert.4.title': 'FullStack Developer',
-        'cert.5.title': 'DevOps',
-        'cert.6.title': 'Data Science',
-        'cert.7.title': 'Systems Analysis and Development',
-        'cert.8.title': 'Software Engineering',
-        'cert.9.title': 'Database Administration',
+        'cert.3.title': 'Digital Game Programming',
+        'cert.4.title': 'Social Sciences',
+        'cert.5.title': 'FullStack Developer',
+        'cert.6.title': 'DevOps',
+        'cert.7.title': 'Data Science',
+        'cert.8.title': 'Systems Analysis and Development',
+        'cert.9.title': 'Software Engineering',
+        'cert.10.title': 'Database Administration',
 
         // Languages
         'lang.portuguese': 'Portuguese',
@@ -579,13 +583,14 @@ const translations = {
         'certifications.subtitle': 'Haga clic en los enlaces para ver los certificados',
         'cert.1.title': 'Ensamblaje y Mantenimiento de Computadoras',
         'cert.2.title': 'Diseño Gráfico & Web Design',
-        'cert.3.title': 'Ciencias Sociales',
-        'cert.4.title': 'Desarrollador FullStack',
-        'cert.5.title': 'DevOps',
-        'cert.6.title': 'Ciencia de Datos',
-        'cert.7.title': 'Análisis y Desarrollo de Sistemas',
-        'cert.8.title': 'Ingeniería de Software',
-        'cert.9.title': 'Administración de Base de Datos',
+        'cert.3.title': 'Programación de Juegos Digitales',
+        'cert.4.title': 'Ciencias Sociales',
+        'cert.5.title': 'Desarrollador FullStack',
+        'cert.6.title': 'DevOps',
+        'cert.7.title': 'Ciencia de Datos',
+        'cert.8.title': 'Análisis y Desarrollo de Sistemas',
+        'cert.9.title': 'Ingeniería de Software',
+        'cert.10.title': 'Administración de Bases de Datos',
 
         // Idiomas
         'lang.portuguese': 'Portugués',
