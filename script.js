@@ -46,6 +46,20 @@ function initializeTheme() {
     }
 
     updateThemeIcon();
+    
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            if (e.matches) {
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+            } else {
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+            }
+            updateThemeIcon();
+        }
+    });
 }
 
 function setupThemeToggle() {
@@ -57,7 +71,9 @@ function setupThemeToggle() {
 }
 
 function toggleTheme() {
-    if (document.body.classList.contains('light-mode')) {
+    const isDarkMode = document.body.classList.contains('light-mode');
+    
+    if (isDarkMode) {
         document.body.classList.remove('light-mode');
         document.body.classList.add('dark-mode');
         localStorage.setItem('theme', 'dark-mode');
@@ -68,20 +84,31 @@ function toggleTheme() {
     }
 
     updateThemeIcon();
+    
+    // Update ARIA pressed state
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.setAttribute('aria-pressed', !isDarkMode);
 }
 
 function updateThemeIcon() {
     const themeIcon = document.querySelector('#themeToggle i');
+    const themeToggle = document.getElementById('themeToggle');
+    const isDarkMode = document.body.classList.contains('dark-mode');
 
-    if (document.body.classList.contains('dark-mode')) {
+    if (isDarkMode) {
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');
-        themeIcon.title = 'Alternar para modo claro';
+        themeToggle.setAttribute('aria-label', 'Switch to light mode');
+        themeToggle.title = 'Alternar para modo claro';
     } else {
         themeIcon.classList.remove('fa-sun');
         themeIcon.classList.add('fa-moon');
-        themeIcon.title = 'Alternar para modo escuro';
+        themeToggle.setAttribute('aria-label', 'Switch to dark mode');
+        themeToggle.title = 'Alternar para modo escuro';
     }
+    
+    // Initialize aria-pressed
+    themeToggle.setAttribute('aria-pressed', isDarkMode);
 }
 
 // ===== GERENCIAMENTO DE IDIOMA =====
@@ -108,7 +135,18 @@ function setupLanguageSelector() {
     // Abrir/fechar dropdown
     languageBtn.addEventListener('click', function (e) {
         e.stopPropagation();
+        const isOpen = languageDropdown.classList.contains('show');
         languageDropdown.classList.toggle('show');
+        
+        // Update ARIA attributes
+        languageBtn.setAttribute('aria-expanded', !isOpen);
+        
+        // Update aria-selected for language options
+        const currentLang = document.body.getAttribute('data-lang') || 'pt';
+        languageOptions.forEach(option => {
+            const optionLang = option.getAttribute('data-lang');
+            option.setAttribute('aria-selected', optionLang === currentLang);
+        });
     });
 
     // Selecionar idioma
@@ -299,6 +337,7 @@ const translations = {
         // Navegação
         'nav.home': 'Início',
         'nav.experience': 'Experiência',
+        'nav.portfolio': 'Projetos',
         'nav.skills': 'Habilidades',
         'nav.certifications': 'Certificações',
         'nav.languages': 'Idiomas',
@@ -314,12 +353,26 @@ const translations = {
         // Botões
         'button.cv': 'Currículo',
         'button.view': 'Ver Certificado',
+        'button.demo': 'Demo',
+        'button.code': 'Código',
 
         // Seções
         'sections.experience': 'Experiência Profissional',
+        'sections.portfolio': 'Projetos em Destaque',
         'sections.skills': 'Habilidades Técnicas',
         'sections.certifications': 'Certificações',
         'sections.languages': 'Idiomas',
+        
+        // Portfolio
+        'portfolio.subtitle': 'Conheça alguns dos meus projetos recentes em Data Science e AI',
+        'project.1.title': 'Dashboard de Análise de Vendas',
+        'project.1.description': 'Dashboard interativo desenvolvido com Streamlit para análise exploratória de dados de vendas, com filtros dinâmicos e visualizações avançadas.',
+        'project.2.title': 'Chatbot com NLP',
+        'project.2.description': 'Chatbot inteligente utilizando processamento de linguagem natural para atendimento ao cliente, com integração de múltiplos canais.',
+        'project.3.title': 'Sistema de Visão Computacional',
+        'project.3.description': 'Sistema de detecção de objetos em tempo real utilizando YOLO para análise de imagens em aplicações industriais.',
+        'project.4.title': 'Pipeline de Dados Geoespaciais',
+        'project.4.description': 'Pipeline ETL para processamento e análise de dados geoespaciais, com visualização de mapas interativos e relatórios automatizados.',
 
         // Experiência
         'experience.1.title': 'Analista de Dados',
@@ -403,6 +456,7 @@ const translations = {
         // Navigation
         'nav.home': 'Home',
         'nav.experience': 'Experience',
+        'nav.portfolio': 'Projects',
         'nav.skills': 'Skills',
         'nav.certifications': 'Certifications',
         'nav.languages': 'Languages',
@@ -418,12 +472,26 @@ const translations = {
         // Buttons
         'button.cv': 'Resume',
         'button.view': 'View Certificate',
+        'button.demo': 'Demo',
+        'button.code': 'Code',
 
         // Sections
         'sections.experience': 'Professional Experience',
+        'sections.portfolio': 'Featured Projects',
         'sections.skills': 'Technical Skills',
         'sections.certifications': 'Certifications',
         'sections.languages': 'Languages',
+        
+        // Portfolio
+        'portfolio.subtitle': 'Check out some of my recent Data Science and AI projects',
+        'project.1.title': 'Sales Analysis Dashboard',
+        'project.1.description': 'Interactive dashboard developed with Streamlit for exploratory sales data analysis, with dynamic filters and advanced visualizations.',
+        'project.2.title': 'NLP Chatbot',
+        'project.2.description': 'Intelligent chatbot using natural language processing for customer service, with multi-channel integration.',
+        'project.3.title': 'Computer Vision System',
+        'project.3.description': 'Real-time object detection system using YOLO for image analysis in industrial applications.',
+        'project.4.title': 'Geospatial Data Pipeline',
+        'project.4.description': 'ETL pipeline for processing and analyzing geospatial data, with interactive map visualizations and automated reports.',
 
         // Experience
         'experience.1.title': 'Data Analyst',
@@ -507,6 +575,7 @@ const translations = {
         // Navegación
         'nav.home': 'Inicio',
         'nav.experience': 'Experiencia',
+        'nav.portfolio': 'Proyectos',
         'nav.skills': 'Habilidades',
         'nav.certifications': 'Certificaciones',
         'nav.languages': 'Idiomas',
@@ -522,12 +591,26 @@ const translations = {
         // Botones
         'button.cv': 'Currículum',
         'button.view': 'Ver Certificado',
+        'button.demo': 'Demo',
+        'button.code': 'Código',
 
         // Secciones
         'sections.experience': 'Experiencia Profesional',
+        'sections.portfolio': 'Proyectos Destacados',
         'sections.skills': 'Habilidades Técnicas',
         'sections.certifications': 'Certificaciones',
         'sections.languages': 'Idiomas',
+        
+        // Portfolio
+        'portfolio.subtitle': 'Conoce algunos de mis proyectos recientes en Data Science e IA',
+        'project.1.title': 'Dashboard de Análisis de Ventas',
+        'project.1.description': 'Dashboard interactivo desarrollado con Streamlit para análisis exploratorio de datos de ventas, con filtros dinámicos y visualizaciones avanzadas.',
+        'project.2.title': 'Chatbot con NLP',
+        'project.2.description': 'Chatbot inteligente utilizando procesamiento de lenguaje natural para atención al cliente, con integración de múltiples canales.',
+        'project.3.title': 'Sistema de Visión Computacional',
+        'project.3.description': 'Sistema de detección de objetos en tiempo real utilizando YOLO para análisis de imágenes en aplicaciones industriales.',
+        'project.4.title': 'Pipeline de Datos Geoespaciales',
+        'project.4.description': 'Pipeline ETL para procesamiento y análisis de datos geoespaciales, con visualización de mapas interactivos y reportes automatizados.',
 
         // Experiencia
         'experience.1.title': 'Analista de Datos',
@@ -636,6 +719,7 @@ function setupMobileMenu() {
     if (!mobileMenuBtn || !navLinks) return;
 
     mobileMenuBtn.addEventListener('click', function () {
+        const isExpanded = navLinks.classList.contains('active');
         navLinks.classList.toggle('active');
         const icon = this.querySelector('i');
 
@@ -643,6 +727,12 @@ function setupMobileMenu() {
             icon.classList.remove('fa-bars');
             icon.classList.add('fa-times');
             this.setAttribute('aria-expanded', 'true');
+            
+            // Focus first menu item for better keyboard navigation
+            const firstMenuItem = navLinks.querySelector('a');
+            if (firstMenuItem) {
+                firstMenuItem.focus();
+            }
         } else {
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
@@ -663,12 +753,45 @@ function setupMobileMenu() {
     // Fechar menu ao clicar fora
     document.addEventListener('click', function (event) {
         if (!event.target.closest('.navbar') && navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-            mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            closeMobileMenu();
         }
     });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function (event) {
+        // ESC key to close mobile menu
+        if (event.key === 'Escape' && navLinks.classList.contains('active')) {
+            closeMobileMenu();
+            mobileMenuBtn.focus();
+        }
+        
+        // Tab navigation for mobile menu
+        if (event.key === 'Tab' && navLinks.classList.contains('active')) {
+            const focusableElements = navLinks.querySelectorAll('a');
+            const firstElement = focusableElements[0];
+            const lastElement = focusableElements[focusableElements.length - 1];
+            
+            if (event.shiftKey) {
+                if (document.activeElement === firstElement) {
+                    event.preventDefault();
+                    lastElement.focus();
+                }
+            } else {
+                if (document.activeElement === lastElement) {
+                    event.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        }
+    });
+    
+    function closeMobileMenu() {
+        navLinks.classList.remove('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+    }
 }
 
 // ===== SMOOTH SCROLLING =====
