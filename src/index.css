@@ -101,4 +101,16 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Melhoria para touch targets em dispositivos móveis */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Prevenir seleção de texto em elementos interativos */
+  .no-select {
+    -webkit-user-select: none;
+    user-select: none;
+  }
 }

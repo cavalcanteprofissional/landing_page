@@ -6,7 +6,9 @@
       "portfolio": "Projetos",
       "skills": "Habilidades",
       "certifications": "Certificações",
-      "languages": "Idiomas"
+      "languages": "Idiomas",
+      "menu": "Menu",
+      "swipeToClose": "Deslize para fechar"
     },
     "hero": {
       "name": "Lucas Cavalcante dos Santos",
