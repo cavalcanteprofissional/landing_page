@@ -138,13 +138,7 @@ export function Experience() {
                         </ul>
                       </div>
 
-                      {/* Footer indicator - neutro */}
-                      <div className="px-6 py-3 border-t border-border/30 relative z-10 bg-muted/20">
-                        <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                          <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50" />
-                          <span>{exp.descriptionKeys.length} {t('experience.activities')}</span>
-                        </div>
-                      </div>
+
                     </motion.div>
                   </div>
                 </motion.div>

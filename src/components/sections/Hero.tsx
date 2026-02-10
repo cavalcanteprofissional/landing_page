@@ -21,14 +21,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="order-2 md:order-1"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="inline-block px-4 py-2 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-400 text-sm font-medium mb-6"
-            >
-              Data Analyst & AI Specialist
-            </motion.div>
+
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -88,8 +81,8 @@ export function Hero() {
           >
             <div className="relative">
               <motion.div
-                className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-full overflow-hidden border-4 border-sky-500/30 shadow-2xl shadow-sky-500/20"
-                whileHover={{ scale: 1.05, rotate: 2 }}
+                className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 xl:w-80 xl:h-80 rounded-2xl overflow-hidden border-4 border-sky-500/30 shadow-2xl shadow-sky-500/20"
+                whileHover={{ scale: 1.05, y: -8 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >
                 <img
@@ -119,20 +112,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 border-2 border-sky-500/30 rounded-full flex justify-center pt-2">
-          <motion.div
-            className="w-1.5 h-3 bg-sky-500 rounded-full"
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }

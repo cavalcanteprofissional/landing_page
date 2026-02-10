@@ -21,7 +21,7 @@ export function ThemeToggle() {
         transition={{ duration: 0.3 }}
       >
         {isDark ? (
-          <Sun className="w-5 h-5 text-yellow-500" />
+          <Sun className="w-5 h-5 text-sky-500" />
         ) : (
           <Moon className="w-5 h-5 text-slate-600" />
         )}
