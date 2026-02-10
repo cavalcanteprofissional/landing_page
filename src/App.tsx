@@ -11,19 +11,9 @@ import { Languages } from './components/sections/Languages';
 import './i18n';
 
 function App() {
-  const { theme, setTheme } = useThemeStore();
+  const { theme } = useThemeStore();
 
-  // Initialize theme from localStorage on mount
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-    }
-  }, [setTheme]);
-
-  // Update document class when theme changes
+  // Apply theme class whenever theme changes (including initial load from persisted storage)
   useEffect(() => {
     document.documentElement.classList.remove('light', 'dark');
     document.documentElement.classList.add(theme);

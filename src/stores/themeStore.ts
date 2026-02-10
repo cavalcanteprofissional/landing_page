@@ -8,18 +8,21 @@ export const useThemeStore = create<ThemeState>()(
       theme: 'light',
       toggleTheme: () => set((state) => {
         const newTheme: Theme = state.theme === 'light' ? 'dark' : 'light';
-        document.documentElement.classList.remove('light', 'dark');
-        document.documentElement.classList.add(newTheme);
         return { theme: newTheme };
       }),
       setTheme: (theme: Theme) => set(() => {
-        document.documentElement.classList.remove('light', 'dark');
-        document.documentElement.classList.add(theme);
         return { theme };
       }),
     }),
     {
       name: 'theme-storage',
+      onRehydrateStorage: () => (state) => {
+        // Apply theme class immediately when storage is rehydrated
+        if (state?.theme) {
+          document.documentElement.classList.remove('light', 'dark');
+          document.documentElement.classList.add(state.theme);
+        }
+      },
     }
   )
 );

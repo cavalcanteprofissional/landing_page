@@ -114,3 +114,49 @@
     user-select: none;
   }
 }
+
+/* Animação de borda infinita para cards de experiência */
+@keyframes borderRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.border-animation::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 1rem;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)), hsl(var(--accent)));
+  background-size: 300% 300%;
+  animation: borderRotate 4s linear infinite;
+  z-index: 0;
+}
+
+.border-animation-fast::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 1rem;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)), hsl(var(--accent)));
+  background-size: 300% 300%;
+  animation: borderRotate 2s linear infinite;
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  z-index: 0;
+}
+
+/* Esconder scrollbar mas manter funcionalidade */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
