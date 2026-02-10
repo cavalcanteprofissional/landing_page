@@ -148,7 +148,7 @@
     hsl(var(--primary) / 0.4)
   );
   background-size: 300% 300%;
-  animation: borderRotateSubtle 3s linear infinite;
+  animation: borderRotateSubtle 6s linear infinite;
   opacity: 0.7;
 }
 

@@ -70,14 +70,15 @@
       "current": "Atual",
       "more": "mais",
       "activities": "atividades",
-      "1": {
+
+      "2": {
         "title": "Analista de Dados",
         "1": "Definição do escopo e modelagem de dados (DER) para projeto no mercado de moda do Ceará.",
         "2": "Coleta, limpeza e preparação de datasets utilizando Python e bibliotecas de análise.",
         "3": "Realização de Análise Exploratória de Dados (EDA) e cálculo de estatísticas descritivas.",
         "4": "Geração de dashboards interativos e relatórios para alta gestão utilizando Power BI."
       },
-      "2": {
+      "3": {
         "title": "Analista de Dados",
         "1": "Definição do escopo e modelagem de dados (DER) para projeto no mercado de moda do Ceará.",
         "2": "Coleta, limpeza e preparação de datasets utilizando Python e bibliotecas de análise.",
@@ -85,7 +86,7 @@
         "4": "Implementação de modelo de machine learning (Random Forest) com avaliação de métricas.",
         "5": "Geração de dashboards interativos e relatórios para alta gestão utilizando Streamlit."
       },
-      "3": {
+      "4": {
         "title": "Analista de Marketing e Comercial",
         "1": "Planejamento e gestão de campanhas digitais (Google Ads, Meta Ads) com monitoramento de KPIs.",
         "2": "Implementação de estratégias de SEO e SEM, resultando em aumento do tráfego orgânico.",
@@ -93,13 +94,21 @@
         "4": "Gerenciamento de CRM via ERP interno.",
         "5": "Suporte à equipe comercial na prospecção e fidelização de clientes."
       },
-      "4": {
+      "5": {
         "title": "Analista de Marketing | Assistente de Marketing",
         "1": "Desenvolvimento e monitoramento de campanhas promocionais.",
         "2": "Implementação de estratégias de SEO/SEM e gestão de conteúdo para site e redes sociais.",
         "3": "Criação de conteúdo gráfico e manutenção dos canais de comunicação digitais."
       },
-      "5": {
+      "7": {
+        "title": "Bolsista em Inteligência Artificial",
+        "1": "Processamento de Linguagem Natural.",
+        "2": "Aprendizagem de Máquina.",
+        "3": "Processamento de Imagem e Visão Computacional.",
+        "4": "Mineração e Ciência de Dados.",
+        "5": "Estatísticas Aplicadas."
+      },
+      "6": {
         "title": "Técnico em Informática e Redes",
         "company": "Autônomo",
         "1": "Montagem, manutenção e configuração de infraestrutura de TI (computadores, servidores, redes TCP/IP, Wi-Fi).",

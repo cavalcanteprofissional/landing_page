@@ -15,7 +15,7 @@ export function Experience() {
     parseInt(b.year) - parseInt(a.year)
   );
 
-  const isCurrent = (year: string) => year === '2026';
+  const isCurrent = (year: string, index: number) => index === 0 && sortedExperiences[0]?.year === year;
 
   const scrollToCard = (index: number) => {
     if (scrollContainerRef.current) {
@@ -72,7 +72,7 @@ export function Experience() {
             }}
           >
             {sortedExperiences.map((exp, index) => {
-              const current = isCurrent(exp.year);
+              const current = isCurrent(exp.year, index);
               
               return (
                 <motion.div
@@ -91,10 +91,9 @@ export function Experience() {
                       whileHover={{ y: -4 }}
                       transition={{ duration: 0.3 }}
                       className="bg-card rounded-2xl border border-border/50 h-full flex flex-col overflow-hidden relative shadow-sm hover:shadow-md transition-shadow"
-                      style={{ minHeight: '420px' }}
+                      style={{ minHeight: '320px' }}
                     >
-                      {/* Animação de borda sutil */}
-                      <div className={`absolute inset-0 rounded-2xl pointer-events-none border-2 ${current ? 'border-animation-subtle-fast' : 'border-animation-subtle'}`} />
+
                       
                       {/* Header - cores neutras */}
                       <div className="p-6 border-b border-border/30 relative z-10">
@@ -102,7 +101,7 @@ export function Experience() {
                           <div className="p-2.5 rounded-lg bg-muted">
                             <Briefcase className="w-5 h-5 text-muted-foreground" />
                           </div>
-                          <span className="px-3 py-1 rounded-full text-sm font-medium bg-muted text-foreground border border-border">
+                          <span className={`px-3 py-1 rounded-full text-sm font-medium border-2 ${current ? 'border-animation-subtle-fast text-primary' : 'border-border bg-muted text-foreground'}`}>
                             {exp.year}
                             {current && (
                               <span className="ml-2 text-xs text-muted-foreground">{t('experience.current')}</span>
@@ -122,7 +121,7 @@ export function Experience() {
                       {/* Description */}
                       <div className="p-6 flex-1 relative z-10">
                         <ul className="space-y-3">
-                          {exp.descriptionKeys.slice(0, 3).map((key, i) => (
+                          {exp.descriptionKeys.map((key, i) => (
                             <motion.li 
                               key={i}
                               initial={{ opacity: 0, x: -10 }}
@@ -160,7 +159,7 @@ export function Experience() {
                     ? 'w-8 bg-primary' 
                     : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
                 }`}
-                aria-label={`Go to experience ${index + 1}`}
+                aria-label={`Go to experience ${index + 1}: ${exp.company} (${exp.year})`}
               />
             ))}
           </div>

@@ -4,8 +4,6 @@ import {
   Linkedin, 
   Github, 
   Mail, 
-  Phone, 
-  MapPin,
   FileText,
   MessageCircle,
   GraduationCap
@@ -22,8 +20,7 @@ const socialLinks = [
 ];
 
 export function Footer() {
-  const { t, i18n } = useTranslation();
-  const currentYear = new Date().getFullYear();
+  const { i18n } = useTranslation();
   const currentLang = i18n.language as LanguageCode;
   
   // Get resume info for current language
@@ -31,44 +28,15 @@ export function Footer() {
   const cvHref = `/cavalcanteprofissional/documents/resumes/${resumeInfo.file}`;
 
   return (
-    <footer className="bg-muted/50 border-t border-border">
-      <div className="section-container py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">{t('footer.contact')}</h2>
-          <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-            {t('footer.message')}
-          </p>
-
-          {/* Contact Info */}
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-6 mb-8">
-            <a 
-              href="mailto:cavalcanteprofissional@outlook.com"
-              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base max-w-full"
-            >
-              <Mail className="w-4 h-4 flex-shrink-0" />
-              <span className="break-all">cavalcanteprofissional@outlook.com</span>
-            </a>
-            <a 
-              href="tel:+5585996859051"
-              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base"
-            >
-              <Phone className="w-4 h-4 flex-shrink-0" />
-              <span>(85) 9 9685-9051</span>
-            </a>
-            <div className="flex items-center gap-2 text-muted-foreground text-sm sm:text-base">
-              <MapPin className="w-4 h-4 flex-shrink-0" />
-              <span>Fortaleza - CE</span>
-            </div>
-          </div>
-
+    <motion.footer
+      initial={{ y: 100 }}
+      animate={{ y: 0 }}
+      className="fixed bottom-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-t border-border transition-all duration-300"
+    >
+      <div className="section-container">
+        <div className="flex items-center justify-center h-16 md:h-20">
           {/* Social Links - CV dinâmico incluído */}
-          <div className="flex justify-center gap-3 sm:gap-4 mb-12 flex-wrap">
+          <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center">
             {socialLinks.map((link, index) => (
               <motion.a
                 key={link.label}
@@ -80,7 +48,7 @@ export function Footer() {
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.05 }}
                 aria-label={link.label}
               >
                 <link.icon className="w-5 h-5" />
@@ -98,20 +66,15 @@ export function Footer() {
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: socialLinks.length * 0.1 }}
+              transition={{ delay: socialLinks.length * 0.05 }}
               aria-label={resumeInfo.label}
               title={resumeInfo.label}
             >
               <FileText className="w-5 h-5" />
             </motion.a>
           </div>
-
-          {/* Copyright */}
-          <div className="text-sm text-muted-foreground">
-            &copy; {currentYear} Lucas Cavalcante. {t('footer.rights')}
-          </div>
-        </motion.div>
+        </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

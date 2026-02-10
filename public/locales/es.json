@@ -70,14 +70,22 @@
       "current": "Actual",
       "more": "más",
       "activities": "actividades",
-      "1": {
+      "7": {
+        "title": "Becario en Inteligencia Artificial",
+        "1": "Procesamiento de Lenguaje Natural.",
+        "2": "Aprendizaje Automático.",
+        "3": "Procesamiento de Imagen y Visión por Computadora.",
+        "4": "Minería y Ciencia de Datos.",
+        "5": "Estadísticas Aplicadas."
+      },
+      "2": {
         "title": "Analista de Datos",
         "1": "Definición del alcance y modelado de datos (DER) para un proyecto en el mercado de moda de Ceará.",
         "2": "Recopilación, limpieza y preparación de datasets utilizando Python y bibliotecas de análisis.",
         "3": "Realización de Análisis Exploratorio de Datos (EDA) y cálculo de estadísticas descriptivas.",
         "4": "Generación de dashboards interactivos e informes para la alta gerencia utilizando Power BI."
       },
-      "2": {
+      "3": {
         "title": "Analista de Datos",
         "1": "Definición del alcance y modelado de datos (DER) para un proyecto en el mercado de moda de Ceará.",
         "2": "Recopilación, limpieza y preparación de datasets utilizando Python y bibliotecas de análisis.",
@@ -85,7 +93,7 @@
         "4": "Implementación de modelo de machine learning (Random Forest) con evaluación de métricas.",
         "5": "Generación de dashboards interactivos e informes para la alta gerencia utilizando Streamlit."
       },
-      "3": {
+      "4": {
         "title": "Analista de Marketing y Comercial",
         "1": "Planificación y gestión de campañas digitales (Google Ads, Meta Ads) con monitoreo de KPIs.",
         "2": "Implementación de estrategias de SEO y SEM, resultando en aumento del tráfico orgánico.",
@@ -93,16 +101,16 @@
         "4": "Gestión de CRM mediante ERP interno.",
         "5": "Apoyo al equipo comercial en la prospección y retención de clientes."
       },
-      "4": {
+      "5": {
         "title": "Analista de Marketing | Asistente de Marketing",
         "1": "Desarrollo y monitoreo de campañas promocionales.",
         "2": "Implementación de estrategias SEO/SEM y gestión de contenido para sitio web y redes sociales.",
         "3": "Creación de contenido gráfico y mantenimiento de los canales de comunicación digitales."
       },
-      "5": {
+      "6": {
         "title": "Técnico en Informática y Redes",
         "company": "Autónomo",
-        "1": "Ensamblaje, mantenimiento y configuración de infraestructura de TI (computadoras, servidores, redes TCP/IP, Wi-Fi).",
+        "1": "Montaje, mantenimiento y configuración de infraestructura de TI (computadoras, servidores, redes TCP/IP, Wi-Fi).",
         "2": "Soporte técnico remoto y presencial, instalación de software y permisos de acceso.",
         "3": "Consultoría técnica y elaboración de propuestas para licitaciones de equipos."
       }

@@ -70,14 +70,22 @@
       "current": "Current",
       "more": "more",
       "activities": "activities",
-      "1": {
+      "7": {
+        "title": "Artificial Intelligence Research Fellow",
+        "1": "Natural Language Processing.",
+        "2": "Machine Learning.",
+        "3": "Image Processing and Computer Vision.",
+        "4": "Data Mining and Data Science.",
+        "5": "Applied Statistics."
+      },
+      "2": {
         "title": "Data Analyst",
         "1": "Definition of scope and data modeling (ERD) for a project in the Ceará fashion market.",
         "2": "Collection, cleaning, and preparation of datasets using Python and analysis libraries.",
         "3": "Performance of Exploratory Data Analysis (EDA) and calculation of descriptive statistics.",
         "4": "Generation of interactive dashboards and reports for senior management using Power BI."
       },
-      "2": {
+      "3": {
         "title": "Data Analyst",
         "1": "Definition of scope and data modeling (ERD) for a project in the Ceará fashion market.",
         "2": "Collection, cleaning, and preparation of datasets using Python and analysis libraries.",
@@ -85,7 +93,7 @@
         "4": "Implementation of machine learning model (Random Forest) with metric evaluation.",
         "5": "Generation of interactive dashboards and reports for senior management using Streamlit."
       },
-      "3": {
+      "4": {
         "title": "Marketing and Commercial Analyst",
         "1": "Planning and management of digital campaigns (Google Ads, Meta Ads) with KPI monitoring.",
         "2": "Implementation of SEO and SEM strategies, resulting in increased organic traffic.",
@@ -93,18 +101,18 @@
         "4": "CRM management via internal ERP.",
         "5": "Support to the commercial team in customer prospecting and retention."
       },
-      "4": {
+      "5": {
         "title": "Marketing Analyst | Marketing Assistant",
         "1": "Development and monitoring of promotional campaigns.",
         "2": "Implementation of SEO/SEM strategies and content management for website and social media.",
         "3": "Creation of graphic content and maintenance of digital communication channels."
       },
-      "5": {
-        "title": "IT and Networks Technician",
+      "6": {
+        "title": "IT and Network Technician",
         "company": "Freelancer",
-        "1": "Assembly, maintenance, and configuration of IT infrastructure (computers, servers, TCP/IP networks, Wi-Fi).",
-        "2": "Remote and on-site technical support, software installation, and access permissioning.",
-        "3": "Technical consulting and preparation of proposals for equipment bidding."
+        "1": "Assembly, maintenance and configuration of IT infrastructure (computers, servers, TCP/IP networks, Wi-Fi).",
+        "2": "Remote and on-site technical support, software installation and access permissions.",
+        "3": "Technical consulting and preparation of bids for equipment procurement."
       }
     },
     "skills": {
