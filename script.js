@@ -373,6 +373,8 @@ const translations = {
         'project.3.description': 'Sistema de detecção de objetos em tempo real utilizando YOLO para análise de imagens em aplicações industriais.',
         'project.4.title': 'Pipeline de Dados Geoespaciais',
         'project.4.description': 'Pipeline ETL para processamento e análise de dados geoespaciais, com visualização de mapas interativos e relatórios automatizados.',
+        'project.7.title': 'Pipeline Modular de Question Answering',
+        'project.7.description': 'Uma pipeline robusta, modular e paralela para processar e analisar respostas de múltiplos modelos de Question Answering (QA) usando a plataforma Hugging Face.',
 
         // Experiência
         'experience.1.title': 'Analista de Dados',
@@ -492,6 +494,8 @@ const translations = {
         'project.3.description': 'Real-time object detection system using YOLO for image analysis in industrial applications.',
         'project.4.title': 'Geospatial Data Pipeline',
         'project.4.description': 'ETL pipeline for processing and analyzing geospatial data, with interactive map visualizations and automated reports.',
+        'project.7.title': 'Modular Question Answering Pipeline',
+        'project.7.description': 'A robust, modular, and parallel pipeline for processing and analyzing responses from multiple Question Answering (QA) models using the Hugging Face platform.',
 
         // Experience
         'experience.1.title': 'Data Analyst',
@@ -611,6 +615,8 @@ const translations = {
         'project.3.description': 'Sistema de detección de objetos en tiempo real utilizando YOLO para análisis de imágenes en aplicaciones industriales.',
         'project.4.title': 'Pipeline de Datos Geoespaciales',
         'project.4.description': 'Pipeline ETL para procesamiento y análisis de datos geoespaciales, con visualización de mapas interactivos y reportes automatizados.',
+        'project.7.title': 'Pipeline Modular de Question Answering',
+        'project.7.description': 'Una pipeline robusta, modular y paralela para procesar y analizar respuestas de múltiples modelos de Question Answering (QA) usando la plataforma Hugging Face.',
 
         // Experiencia
         'experience.1.title': 'Analista de Datos',
