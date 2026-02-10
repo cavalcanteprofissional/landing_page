@@ -21,9 +21,9 @@ export function ThemeToggle() {
         transition={{ duration: 0.3 }}
       >
         {isDark ? (
-          <Sun className="w-5 h-5 text-sky-500" />
+          <Sun className="w-5 h-5 text-[hsl(var(--primary))]" />
         ) : (
-          <Moon className="w-5 h-5 text-slate-600" />
+          <Moon className="w-5 h-5 text-[hsl(var(--muted-foreground))]" />
         )}
       </motion.div>
     </motion.button>

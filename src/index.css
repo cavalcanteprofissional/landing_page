@@ -6,51 +6,53 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* Branco acinzentado azulado suave */
+    --background: 220 15% 98%;
     --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
+    --card: 220 10% 99%;
     --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
+    --popover: 220 15% 98%;
     --popover-foreground: 222.2 84% 4.9%;
     /* Azul Oceano - Primary */
     --primary: 199 89% 48%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 96.1%;
+    --secondary: 220 20% 96%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
+    --muted: 220 25% 94%;
     --muted-foreground: 215.4 16.3% 46.9%;
     /* Turquesa - Accent */
     --accent: 168 76% 42%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 220 30% 88%;
+    --input: 220 30% 88%;
     --ring: 199 89% 48%;
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Azul escuro complementar */
+    --background: 220 25% 8%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 220 20% 10%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 220 25% 8%;
     --popover-foreground: 210 40% 98%;
     /* Azul Oceano mais brilhante no dark mode */
     --primary: 199 89% 55%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 220 35% 12%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
+    --muted: 220 40% 15%;
     --muted-foreground: 215 20.2% 65.1%;
     /* Turquesa mais brilhante */
     --accent: 168 76% 50%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --border: 220 45% 18%;
+    --input: 220 45% 18%;
     --ring: 199 89% 55%;
   }
 }
@@ -72,11 +74,11 @@
 
 @layer components {
   .glass {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20;
+    @apply bg-[hsl(var(--background))]/10 backdrop-blur-lg border border-[hsl(var(--border))]/20;
   }
   
   .glass-dark {
-    @apply bg-black/20 backdrop-blur-lg border border-white/10;
+    @apply bg-[hsl(var(--background))]/20 backdrop-blur-lg border border-[hsl(var(--border))]/10;
   }
   
   /* Gradiente Azul Oceano */

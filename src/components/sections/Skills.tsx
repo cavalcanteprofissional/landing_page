@@ -124,7 +124,7 @@ export function Skills() {
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="px-4 py-2 rounded-full bg-white dark:bg-slate-800 shadow-sm border border-border text-sm font-medium hover:shadow-md transition-shadow"
+                className="px-4 py-2 rounded-full bg-card shadow-sm border border-border text-sm font-medium hover:shadow-md transition-shadow"
               >
                 {t(skill.key)}
               </motion.span>
