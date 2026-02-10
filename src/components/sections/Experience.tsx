@@ -30,26 +30,55 @@ export function Experience() {
         {/* Desktop: Timeline Horizontal */}
         <div className="hidden lg:block">
           <div className="relative">
-            {/* Linha horizontal central */}
-            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent transform -translate-y-1/2" />
-            
-            {/* Container dos cards */}
-            <div className="relative flex justify-between items-start pt-8 pb-16 px-4">
+            {/* Container principal com altura fixa */}
+            <div className="relative h-[500px] px-4">
+              {/* Linha horizontal central da timeline */}
+              <div className="absolute top-[250px] left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
+              
+              {/* Timeline dots - posicionados na linha */}
+              <div className="absolute top-[250px] left-0 right-0 flex justify-between px-[9%]">
+                {sortedExperiences.map((exp, index) => {
+                  const current = isCurrent(exp.year);
+                  return (
+                    <motion.div
+                      key={`dot-${exp.id}`}
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 + 0.3, type: 'spring', stiffness: 500 }}
+                      className={`w-5 h-5 rounded-full border-4 transform -translate-y-1/2 ${
+                        current 
+                          ? 'bg-primary border-primary shadow-lg shadow-primary/30' 
+                          : 'bg-background border-primary'
+                      }`}
+                    />
+                  );
+                })}
+              </div>
+              
+              {/* Cards - posicionados acima ou abaixo da linha */}
               {sortedExperiences.map((exp, index) => {
                 const current = isCurrent(exp.year);
-                const isEven = index % 2 === 0;
+                const isAbove = index % 2 === 0;
+                
+                // Calcular posição horizontal (distribuídos igualmente)
+                const position = index * 20; // 0%, 20%, 40%, 60%, 80%
                 
                 return (
                   <motion.div
-                    key={exp.id}
-                    initial={{ opacity: 0, y: isEven ? -30 : 30 }}
+                    key={`card-${exp.id}`}
+                    initial={{ opacity: 0, y: isAbove ? -40 : 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="relative flex flex-col items-center w-[18%]"
+                    className="absolute w-[16%]"
+                    style={{ 
+                      left: `${position + 2}%`,
+                      top: isAbove ? '20px' : '280px'
+                    }}
                   >
                     {/* Card */}
-                    <div className={`w-full bg-card rounded-xl border shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden ${
+                    <div className={`bg-card rounded-xl border shadow-lg transition-all duration-300 hover:shadow-xl overflow-hidden ${
                       current 
                         ? 'border-primary ring-2 ring-primary/20' 
                         : 'border-border'
@@ -71,20 +100,20 @@ export function Experience() {
                             )}
                           </span>
                         </div>
-                        <h3 className="font-bold text-base leading-tight mb-1">
+                        <h3 className="font-bold text-sm leading-tight mb-1">
                           {t(exp.titleKey)}
                         </h3>
-                        <div className="flex items-center gap-1 text-sm text-primary font-medium">
-                          <Building2 className="w-3.5 h-3.5" />
+                        <div className="flex items-center gap-1 text-xs text-primary font-medium">
+                          <Building2 className="w-3 h-3" />
                           {exp.company}
                         </div>
                       </div>
                       
                       {/* Descrição */}
                       <div className="p-4 pt-2">
-                        <ul className="space-y-1.5">
+                        <ul className="space-y-1">
                           {exp.descriptionKeys.slice(0, 2).map((key, i) => (
-                            <li key={i} className="text-muted-foreground text-xs flex items-start gap-1.5">
+                            <li key={i} className="text-muted-foreground text-xs flex items-start gap-1">
                               <ChevronRight className="w-3 h-3 text-primary mt-0.5 flex-shrink-0" />
                               <span className="line-clamp-2">{t(key)}</span>
                             </li>
@@ -97,24 +126,16 @@ export function Experience() {
                         </ul>
                       </div>
                     </div>
-
-                    {/* Ponto na timeline */}
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 + 0.2, type: 'spring', stiffness: 500 }}
-                      className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border-4 ${
-                        current 
-                          ? 'bg-primary border-primary' 
-                          : 'bg-background border-primary'
-                      }`}
-                    />
                     
-                    {/* Linha conectora */}
-                    <div className={`absolute top-1/2 left-1/2 w-0.5 bg-primary/30 transform -translate-x-1/2 ${
-                      isEven ? '-translate-y-full h-8 -mt-2' : 'translate-y-0 h-8 mt-2'
-                    }`} />
+                    {/* Linha conectora entre card e timeline */}
+                    <div 
+                      className="absolute left-1/2 w-0.5 bg-primary/30 transform -translate-x-1/2"
+                      style={{
+                        top: isAbove ? '100%' : 'auto',
+                        bottom: isAbove ? 'auto' : '100%',
+                        height: '42px'
+                      }}
+                    />
                   </motion.div>
                 );
               })}
