@@ -8,8 +8,7 @@ export function Experience() {
   const { t } = useTranslation();
   const { experiences } = experiencesData;
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   // Ordenar experiências do mais recente para o mais antigo
   const sortedExperiences = [...experiences].sort((a, b) => 
@@ -18,20 +17,32 @@ export function Experience() {
 
   const isCurrent = (year: string) => year === '2026';
 
-  const checkScrollability = () => {
+  const scrollToCard = (index: number) => {
     if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      setCanScrollLeft(scrollLeft > 0);
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+      const container = scrollContainerRef.current;
+      const cardWidth = container.children[0]?.clientWidth || 320;
+      const gap = 24;
+      const scrollPosition = index * (cardWidth + gap);
+      container.scrollTo({ left: scrollPosition, behavior: 'smooth' });
+      setActiveIndex(index);
+    }
+  };
+
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft } = scrollContainerRef.current;
+      const cardWidth = scrollContainerRef.current.children[0]?.clientWidth || 320;
+      const gap = 24;
+      const newIndex = Math.round(scrollLeft / (cardWidth + gap));
+      setActiveIndex(Math.min(newIndex, sortedExperiences.length - 1));
     }
   };
 
   useEffect(() => {
-    checkScrollability();
     const container = scrollContainerRef.current;
     if (container) {
-      container.addEventListener('scroll', checkScrollability);
-      return () => container.removeEventListener('scroll', checkScrollability);
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
     }
   }, []);
 
@@ -50,10 +61,10 @@ export function Experience() {
 
         {/* Carrossel Horizontal */}
         <div className="relative">
-          {/* Container com scroll */}
+          {/* Container com scroll - Desktop: 3 cards + peek */}
           <div 
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide"
+            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-hide cursor-grab active:cursor-grabbing"
             style={{ 
               scrollbarWidth: 'none', 
               msOverflowStyle: 'none',
@@ -70,40 +81,39 @@ export function Experience() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex-shrink-0 w-[85vw] sm:w-[45vw] md:w-[35vw] lg:w-[320px] snap-start"
+                  className="flex-shrink-0 snap-start 
+                    w-[85vw] 
+                    sm:w-[calc((100%-24px)/2)] 
+                    lg:w-[calc((100%-48px)/3.25)]"
                 >
-                  <div className={`experience-card ${current ? 'current' : ''} h-full`}>
+                  <div className="h-full">
                     <motion.div
-                      whileHover={{ y: -8, scale: 1.02 }}
+                      whileHover={{ y: -4 }}
                       transition={{ duration: 0.3 }}
-                      className="bg-card rounded-2xl border-2 border-border h-full flex flex-col overflow-hidden relative"
+                      className="bg-card rounded-2xl border border-border/50 h-full flex flex-col overflow-hidden relative shadow-sm hover:shadow-md transition-shadow"
                       style={{ minHeight: '420px' }}
                     >
-                      {/* Animação de borda infinita */}
-                      <div className={`absolute inset-0 rounded-2xl pointer-events-none ${current ? 'border-animation-fast' : 'border-animation'}`} />
+                      {/* Animação de borda sutil */}
+                      <div className={`absolute inset-0 rounded-2xl pointer-events-none border-2 ${current ? 'border-animation-subtle-fast' : 'border-animation-subtle'}`} />
                       
-                      {/* Header */}
-                      <div className={`p-6 ${current ? 'bg-primary/10' : 'bg-muted/50'} relative z-10`}>
+                      {/* Header - cores neutras */}
+                      <div className="p-6 border-b border-border/30 relative z-10">
                         <div className="flex items-start justify-between mb-4">
-                          <div className={`p-3 rounded-xl ${current ? 'bg-primary/20' : 'bg-secondary'}`}>
-                            <Briefcase className={`w-6 h-6 ${current ? 'text-primary' : 'text-muted-foreground'}`} />
+                          <div className="p-2.5 rounded-lg bg-muted">
+                            <Briefcase className="w-5 h-5 text-muted-foreground" />
                           </div>
-                          <span className={`px-3 py-1 rounded-full text-sm font-bold ${
-                            current 
-                              ? 'bg-primary text-white' 
-                              : 'bg-secondary text-secondary-foreground'
-                          }`}>
+                          <span className="px-3 py-1 rounded-full text-sm font-medium bg-muted text-foreground border border-border">
                             {exp.year}
                             {current && (
-                              <span className="ml-2 text-xs opacity-80">{t('experience.current')}</span>
+                              <span className="ml-2 text-xs text-muted-foreground">{t('experience.current')}</span>
                             )}
                           </span>
                         </div>
                         
-                        <h3 className="text-xl font-bold mb-2 leading-tight">
+                        <h3 className="text-xl font-bold mb-2 leading-tight text-foreground">
                           {t(exp.titleKey)}
                         </h3>
-                        <div className="flex items-center gap-2 text-primary font-medium">
+                        <div className="flex items-center gap-2 text-muted-foreground font-medium">
                           <Building2 className="w-4 h-4" />
                           <span>{exp.company}</span>
                         </div>
@@ -121,17 +131,17 @@ export function Experience() {
                               transition={{ delay: index * 0.1 + i * 0.05 }}
                               className="flex items-start gap-2 text-muted-foreground text-sm"
                             >
-                              <span className="text-primary mt-1">•</span>
+                              <span className="text-muted-foreground mt-1">•</span>
                               <span className="leading-relaxed">{t(key)}</span>
                             </motion.li>
                           ))}
                         </ul>
                       </div>
 
-                      {/* Footer indicator */}
-                      <div className={`px-6 py-3 ${current ? 'bg-primary/5' : 'bg-muted/30'} relative z-10`}>
-                        <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                          <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                      {/* Footer indicator - neutro */}
+                      <div className="px-6 py-3 border-t border-border/30 relative z-10 bg-muted/20">
+                        <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50" />
                           <span>{exp.descriptionKeys.length} {t('experience.activities')}</span>
                         </div>
                       </div>
@@ -145,21 +155,21 @@ export function Experience() {
             <div className="flex-shrink-0 w-4" />
           </div>
 
-          {/* Indicadores de scroll */}
-          <div className="flex justify-center gap-2 mt-4">
-            {sortedExperiences.map((exp) => (
-              <div 
+          {/* Dots clicáveis */}
+          <div className="flex justify-center gap-3 mt-6">
+            {sortedExperiences.map((exp, index) => (
+              <button
                 key={exp.id}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  isCurrent(exp.year) ? 'bg-primary w-6' : 'bg-primary/30'
+                onClick={() => scrollToCard(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeIndex === index 
+                    ? 'w-8 bg-primary' 
+                    : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50'
                 }`}
+                aria-label={`Go to experience ${index + 1}`}
               />
             ))}
           </div>
-
-          {/* Gradientes de fade nas laterais */}
-          <div className={`absolute left-0 top-0 bottom-8 w-12 bg-gradient-to-r from-muted/30 to-transparent pointer-events-none transition-opacity duration-300 ${canScrollLeft ? 'opacity-100' : 'opacity-0'}`} />
-          <div className={`absolute right-0 top-0 bottom-8 w-12 bg-gradient-to-l from-muted/30 to-transparent pointer-events-none transition-opacity duration-300 ${canScrollRight ? 'opacity-100' : 'opacity-0'}`} />
         </div>
       </div>
     </section>

@@ -115,8 +115,8 @@
   }
 }
 
-/* Animação de borda infinita para cards de experiência */
-@keyframes borderRotate {
+/* Animação de borda sutil para cards de experiência */
+@keyframes borderRotateSubtle {
   0% {
     background-position: 0% 50%;
   }
@@ -128,27 +128,28 @@
   }
 }
 
-.border-animation::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 1rem;
-  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)), hsl(var(--accent)));
+.border-animation-subtle {
+  background: linear-gradient(90deg, 
+    hsl(var(--border)), 
+    hsl(var(--muted-foreground) / 0.3), 
+    hsl(var(--border)), 
+    hsl(var(--muted-foreground) / 0.3)
+  );
   background-size: 300% 300%;
-  animation: borderRotate 4s linear infinite;
-  z-index: 0;
+  animation: borderRotateSubtle 4s linear infinite;
+  opacity: 0.5;
 }
 
-.border-animation-fast::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 1rem;
-  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)), hsl(var(--accent)));
+.border-animation-subtle-fast {
+  background: linear-gradient(90deg, 
+    hsl(var(--border)), 
+    hsl(var(--primary) / 0.4), 
+    hsl(var(--border)), 
+    hsl(var(--primary) / 0.4)
+  );
   background-size: 300% 300%;
-  animation: borderRotate 2s linear infinite;
-  box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
-  z-index: 0;
+  animation: borderRotateSubtle 3s linear infinite;
+  opacity: 0.7;
 }
 
 /* Esconder scrollbar mas manter funcionalidade */
