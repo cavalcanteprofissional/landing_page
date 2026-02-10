@@ -55,7 +55,7 @@ export function Skills() {
               >
                 <button
                   onClick={() => toggleCategory(category.id)}
-                  className="w-full flex items-center justify-between p-6 hover:bg-secondary/50 transition-colors"
+                  className="w-full flex items-center justify-between p-4 sm:p-6 hover:bg-secondary/50 transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <div className="p-2 rounded-lg bg-primary/10">
@@ -82,17 +82,17 @@ export function Skills() {
                     >
                       <div className="px-6 pb-6">
                         <div className="flex flex-wrap gap-2">
-                          {category.skills.map((skill) => (
-                            <motion.span
-                              key={skill}
-                              initial={{ scale: 0.8, opacity: 0 }}
-                              animate={{ scale: 1, opacity: 1 }}
-                              className="px-3 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
-                              whileHover={{ scale: 1.05 }}
-                            >
-                              {skill}
-                            </motion.span>
-                          ))}
+                           {category.skills.map((skill) => (
+                             <motion.span
+                               key={skill}
+                               initial={{ scale: 0.8, opacity: 0 }}
+                               animate={{ scale: 1, opacity: 1 }}
+                               className="px-2 sm:px-3 py-1 sm:py-1.5 rounded-full bg-secondary text-secondary-foreground text-xs sm:text-sm hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                               whileHover={{ scale: 1.05 }}
+                             >
+                               {skill}
+                             </motion.span>
+                           ))}
                         </div>
                       </div>
                     </motion.div>
@@ -108,7 +108,7 @@ export function Skills() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-8 border border-primary/10"
+          className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-4 sm:p-6 lg:p-8 border border-primary/10"
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="p-2 rounded-lg bg-primary/10">

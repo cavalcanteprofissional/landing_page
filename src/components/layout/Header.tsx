@@ -128,100 +128,65 @@ export function Header() {
           </div>
         </nav>
 
-      </div>
-
-      {/* Mobile Drawer Overlay */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
-            onClick={() => setIsMobileMenuOpen(false)}
-          />
-        )}
-      </AnimatePresence>
-
-      {/* Mobile Drawer */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.2}
-            onDragEnd={(_, info) => {
-              if (info.offset.x > 100) {
-                setIsMobileMenuOpen(false);
-              }
-            }}
-            className="fixed top-0 right-0 h-full w-[280px] sm:w-[320px] bg-background border-l border-border shadow-2xl z-50 md:hidden"
-          >
-            {/* Drawer Header */}
-            <div className="flex items-center justify-between p-4 border-b border-border">
-              <span className="text-lg font-semibold gradient-text">
-                {t('nav.menu')}
-              </span>
-              <motion.button
+        {/* Mobile Dropdown Menu */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <>
+              {/* Overlay */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2 rounded-full bg-secondary hover:bg-secondary/80 touch-manipulation"
-                whileTap={{ scale: 0.95 }}
-                aria-label="Close menu"
+              />
+              
+              {/* Dropdown Content */}
+              <motion.div
+                initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+                className="absolute top-full left-4 right-4 mt-2 bg-card border border-border rounded-2xl shadow-2xl z-50 md:hidden overflow-hidden"
               >
-                <X className="w-6 h-6" />
-              </motion.button>
-            </div>
-
-            {/* Drawer Content */}
-            <div className="py-2">
-              {navItems.map((item, index) => {
-                const isActive = activeSection === item.href.replace('#', '');
-                return (
-                  <motion.button
-                    key={item.key}
-                    onClick={() => handleNavClick(item.href)}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                    className={`w-full flex items-center justify-between px-5 py-4 text-base font-medium transition-all duration-200 touch-manipulation ${
-                      isActive
-                        ? 'text-primary bg-primary/10 border-l-4 border-primary'
-                        : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50 border-l-4 border-transparent'
-                    }`}
-                    whileTap={{ scale: 0.98, x: -4 }}
-                  >
-                    <span className="flex items-center gap-3">
-                      {isActive && (
-                        <motion.div
-                          layoutId="activeIndicator"
-                          className="w-2 h-2 rounded-full bg-primary"
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          transition={{ type: 'spring', stiffness: 500, damping: 30 }}
-                        />
-                      )}
-                      {t(`nav.${item.key}`)}
-                    </span>
-                    <Menu className="w-4 h-4 opacity-50 rotate-90" />
-                  </motion.button>
-                );
-              })}
-            </div>
-
-            {/* Drawer Footer */}
-            <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-border bg-background/50 backdrop-blur-sm">
-              <p className="text-xs text-muted-foreground text-center">
-                {t('nav.swipeToClose')}
-              </p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                <div className="py-2">
+                  {navItems.map((item, index) => {
+                    const isActive = activeSection === item.href.replace('#', '');
+                    return (
+                      <motion.button
+                        key={item.key}
+                        onClick={() => handleNavClick(item.href)}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.05 }}
+                        className={`w-full flex items-center gap-4 px-5 py-4 text-base font-medium transition-all duration-200 touch-manipulation ${
+                          isActive
+                            ? 'text-primary bg-primary/10 border-l-4 border-primary'
+                            : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50 border-l-4 border-transparent'
+                        }`}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        {isActive && (
+                          <motion.div
+                            layoutId="activeIndicator"
+                            className="w-2 h-2 rounded-full bg-primary flex-shrink-0"
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                          />
+                        )}
+                        <span className="flex-1 text-left">{t(`nav.${item.key}`)}</span>
+                        <X className="w-4 h-4 opacity-0 rotate-45" />
+                      </motion.button>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
+      </div>
     </motion.header>
   );
 }

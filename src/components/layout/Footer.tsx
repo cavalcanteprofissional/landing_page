@@ -28,7 +28,7 @@ export function Footer() {
   
   // Get resume info for current language
   const resumeInfo = certificationsData.resumes[currentLang] || certificationsData.resumes.pt;
-  const cvHref = `/landing_page/documents/resumes/${resumeInfo.file}`;
+  const cvHref = `/cavalcanteprofissional/documents/resumes/${resumeInfo.file}`;
 
   return (
     <footer className="bg-muted/50 border-t border-border">
@@ -40,35 +40,35 @@ export function Footer() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-3xl font-bold mb-4">{t('footer.contact')}</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">{t('footer.contact')}</h2>
           <p className="text-muted-foreground mb-8 max-w-md mx-auto">
             {t('footer.message')}
           </p>
 
           {/* Contact Info */}
-          <div className="flex flex-wrap justify-center gap-6 mb-8">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-3 sm:gap-6 mb-8">
             <a 
               href="mailto:cavalcanteprofissional@outlook.com"
-              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base max-w-full"
             >
-              <Mail className="w-4 h-4" />
-              <span>cavalcanteprofissional@outlook.com</span>
+              <Mail className="w-4 h-4 flex-shrink-0" />
+              <span className="break-all">cavalcanteprofissional@outlook.com</span>
             </a>
             <a 
               href="tel:+5585996859051"
-              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors text-sm sm:text-base"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4 flex-shrink-0" />
               <span>(85) 9 9685-9051</span>
             </a>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <MapPin className="w-4 h-4" />
+            <div className="flex items-center gap-2 text-muted-foreground text-sm sm:text-base">
+              <MapPin className="w-4 h-4 flex-shrink-0" />
               <span>Fortaleza - CE</span>
             </div>
           </div>
 
           {/* Social Links - CV dinâmico incluído */}
-          <div className="flex justify-center gap-4 mb-12">
+          <div className="flex justify-center gap-3 sm:gap-4 mb-12 flex-wrap">
             {socialLinks.map((link, index) => (
               <motion.a
                 key={link.label}

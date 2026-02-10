@@ -49,8 +49,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
 
         {/* Content */}
-        <div className="p-6 flex-1 flex flex-col">
-          <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+        <div className="p-4 sm:p-6 flex-1 flex flex-col">
+          <h3 className="text-lg sm:text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
             {t(project.titleKey)}
           </h3>
           <p className="text-muted-foreground text-sm mb-4 flex-1">
@@ -59,28 +59,28 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
           {/* Tech Tags */}
           <div className="flex flex-wrap gap-2 mb-6">
-            {project.tech.slice(0, 5).map((tech) => (
+            {project.tech.slice(0, 3).map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium"
+                className="px-2 sm:px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium"
               >
                 {tech}
               </span>
             ))}
-            {project.tech.length > 5 && (
-              <span className="px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium">
-                +{project.tech.length - 5}
+            {project.tech.length > 3 && (
+              <span className="px-2 sm:px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium">
+                +{project.tech.length - 3}
               </span>
             )}
           </div>
 
           {/* Links */}
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <motion.a
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors touch-manipulation"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -91,7 +91,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               href={project.codeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors"
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-secondary text-secondary-foreground text-sm font-medium hover:bg-secondary/80 transition-colors touch-manipulation"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

@@ -30,7 +30,7 @@ export function Languages() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
             >
               <motion.div
-                className="bg-card rounded-xl p-6 border border-border shadow-sm text-center"
+                className="bg-card rounded-xl p-4 sm:p-6 border border-border shadow-sm text-center"
                 whileHover={{ y: -4, boxShadow: '0 10px 30px -10px rgba(0,0,0,0.1)' }}
               >
                 <h3 className="text-xl font-semibold mb-2">{t(lang.nameKey)}</h3>

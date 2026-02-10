@@ -47,7 +47,7 @@ export function Certifications() {
                 transition={{ duration: 0.5, delay: index * 0.05 }}
               >
                 <motion.div
-                  className="bg-card rounded-xl p-6 border border-border shadow-sm h-full flex flex-col"
+                  className="bg-card rounded-xl p-4 sm:p-6 border border-border shadow-sm h-full flex flex-col"
                   whileHover={{ y: -4, boxShadow: '0 10px 30px -10px rgba(0,0,0,0.1)' }}
                   transition={{ duration: 0.2 }}
                 >
@@ -70,7 +70,7 @@ export function Certifications() {
 
                   {cert.file && (
                     <motion.a
-                      href={`/landing_page/documents/certifications/${cert.file}`}
+                      href={`/cavalcanteprofissional/documents/certifications/${cert.file}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 font-medium"
