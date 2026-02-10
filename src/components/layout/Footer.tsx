@@ -5,9 +5,9 @@ import {
   Github, 
   Mail, 
   FileText,
-  MessageCircle,
   GraduationCap
 } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 import certificationsData from '../../data/certifications.json';
 import type { LanguageCode } from '../../types';
 
@@ -15,7 +15,7 @@ const socialLinks = [
   { icon: Linkedin, href: 'https://linkedin.com/in/cavalcante-Lucas', label: 'LinkedIn' },
   { icon: Github, href: 'https://github.com/cavalcanteprofissional', label: 'GitHub' },
   { icon: Mail, href: 'mailto:cavalcanteprofissional@outlook.com', label: 'Email' },
-  { icon: MessageCircle, href: 'https://wa.me/5585996859051', label: 'WhatsApp' },
+  { icon: FaWhatsapp, href: 'https://wa.me/5585996859051', label: 'WhatsApp' },
   { icon: GraduationCap, href: 'http://lattes.cnpq.br/7686247677030579', label: 'Lattes' },
 ];
 
@@ -43,8 +43,8 @@ export function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all"
-                whileHover={{ scale: 1.1, y: -4 }}
+                 className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all"
+                whileHover={{ scale: 1.05, y: -4 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
