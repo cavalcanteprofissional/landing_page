@@ -1,0 +1,156 @@
+{
+  "translation": {
+    "nav": {
+      "home": "Home",
+      "experience": "Experience",
+      "portfolio": "Projects",
+      "skills": "Skills",
+      "certifications": "Certifications",
+      "languages": "Languages"
+    },
+    "hero": {
+      "name": "Lucas Cavalcante dos Santos",
+      "title": "Data Analyst | AI & Machine Learning | Computer Vision",
+      "description": "Data Analyst with experience in AI, automation, and digital marketing projects. Specialized in developing chatbots, interactive dashboards, time series and geospatial data pipelines, and implementing SEO/SEM strategies."
+    },
+    "contact": {
+      "location": "Fortaleza - CE, Brazil",
+      "phone": "+55 85 9 9685-9051",
+      "email": "cavalcanteprofissional@outlook.com"
+    },
+    "buttons": {
+      "cv": "Resume",
+      "view": "View Certificate",
+      "demo": "Demo",
+      "code": "Code"
+    },
+    "sections": {
+      "experience": "Professional Experience",
+      "portfolio": "Featured Projects",
+      "skills": "Technical Skills",
+      "certifications": "Certifications",
+      "languages": "Languages"
+    },
+    "portfolio": {
+      "subtitle": "Check out some of my recent Data Science and AI projects"
+    },
+    "project": {
+      "1": {
+        "title": "Sales Analysis Dashboard",
+        "description": "Interactive dashboard developed with Streamlit for exploratory sales data analysis, with dynamic filters and advanced visualizations."
+      },
+      "2": {
+        "title": "NLP Chatbot",
+        "description": "Intelligent chatbot using natural language processing for customer service, with multi-channel integration."
+      },
+      "3": {
+        "title": "Computer Vision System",
+        "description": "Real-time object detection system using YOLO for image analysis in industrial applications."
+      },
+      "4": {
+        "title": "Geospatial Data Pipeline",
+        "description": "ETL pipeline for processing and analyzing geospatial data, with interactive map visualizations and automated reports."
+      },
+      "5": {
+        "title": "Time Series Forecasting System",
+        "description": "Machine Learning model for demand and sales forecasting using advanced time series techniques with LSTM and Prophet architectures."
+      },
+      "6": {
+        "title": "Sentiment Analysis with NLP",
+        "description": "Complete sentiment analysis system for product reviews and customer feedback with interactive visualization and automated reports."
+      },
+      "7": {
+        "title": "Modular Question Answering Pipeline",
+        "description": "A robust, modular, and parallel pipeline for processing and analyzing responses from multiple Question Answering (QA) models using the Hugging Face platform."
+      }
+    },
+    "experience": {
+      "1": {
+        "title": "Data Analyst",
+        "1": "Definition of scope and data modeling (ERD) for a project in the Ceará fashion market.",
+        "2": "Collection, cleaning, and preparation of datasets using Python and analysis libraries.",
+        "3": "Performance of Exploratory Data Analysis (EDA) and calculation of descriptive statistics.",
+        "4": "Generation of interactive dashboards and reports for senior management using Power BI."
+      },
+      "2": {
+        "title": "Data Analyst",
+        "1": "Definition of scope and data modeling (ERD) for a project in the Ceará fashion market.",
+        "2": "Collection, cleaning, and preparation of datasets using Python and analysis libraries.",
+        "3": "Performance of Exploratory Data Analysis (EDA) and calculation of descriptive statistics.",
+        "4": "Implementation of machine learning model (Random Forest) with metric evaluation.",
+        "5": "Generation of interactive dashboards and reports for senior management using Streamlit."
+      },
+      "3": {
+        "title": "Marketing and Commercial Analyst",
+        "1": "Planning and management of digital campaigns (Google Ads, Meta Ads) with KPI monitoring.",
+        "2": "Implementation of SEO and SEM strategies, resulting in increased organic traffic.",
+        "3": "Creation and editing of audiovisual content for social media and sales funnels.",
+        "4": "CRM management via internal ERP.",
+        "5": "Support to the commercial team in customer prospecting and retention."
+      },
+      "4": {
+        "title": "Marketing Analyst | Marketing Assistant",
+        "1": "Development and monitoring of promotional campaigns.",
+        "2": "Implementation of SEO/SEM strategies and content management for website and social media.",
+        "3": "Creation of graphic content and maintenance of digital communication channels."
+      },
+      "5": {
+        "title": "IT and Networks Technician",
+        "company": "Freelancer",
+        "1": "Assembly, maintenance, and configuration of IT infrastructure (computers, servers, TCP/IP networks, Wi-Fi).",
+        "2": "Remote and on-site technical support, software installation, and access permissioning.",
+        "3": "Technical consulting and preparation of proposals for equipment bidding."
+      }
+    },
+    "skills": {
+      "languages": "Languages & Libraries",
+      "ml": "Machine Learning",
+      "dl": "Deep Learning & Computer Vision",
+      "platforms": "Platforms & Tools",
+      "marketing": "Digital Marketing",
+      "tech": "IT Technician and Networks",
+      "agile": "Agile Management",
+      "office": "Microsoft Office",
+      "soft": "Soft Skills",
+      "communication": "Communication",
+      "teamwork": "Teamwork",
+      "problem-solving": "Problem Solving",
+      "adaptability": "Adaptability",
+      "time-management": "Time Management",
+      "critical-thinking": "Critical Thinking",
+      "creativity": "Creativity"
+    },
+    "certifications": {
+      "subtitle": "Click on links to view certificates"
+    },
+    "cert": {
+      "1": { "title": "Computer Assembly and Maintenance" },
+      "2": { "title": "Graphic Design & Web Design" },
+      "3": { "title": "Digital Game Programming" },
+      "4": { "title": "Social Sciences" },
+      "5": { "title": "FullStack Developer" },
+      "6": { "title": "DevOps" },
+      "7": { "title": "Data Science" },
+      "8": { "title": "Systems Analysis and Development" },
+      "9": { "title": "Software Engineering" },
+      "10": { "title": "Database Administration" }
+    },
+    "lang": {
+      "portuguese": "Portuguese",
+      "english": "English",
+      "spanish": "Spanish",
+      "japanese": "Japanese",
+      "level": {
+        "native": "Native",
+        "advanced": "Advanced",
+        "intermediate": "Intermediate",
+        "basic": "Basic"
+      }
+    },
+    "footer": {
+      "contact": "Contact Me",
+      "message": "I am always open to new opportunities and collaborations.",
+      "rights": "All rights reserved."
+    }
+  }
+}

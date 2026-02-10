@@ -1,0 +1,156 @@
+{
+  "translation": {
+    "nav": {
+      "home": "Inicio",
+      "experience": "Experiencia",
+      "portfolio": "Proyectos",
+      "skills": "Habilidades",
+      "certifications": "Certificaciones",
+      "languages": "Idiomas"
+    },
+    "hero": {
+      "name": "Lucas Cavalcante dos Santos",
+      "title": "Analista de Datos | IA & Machine Learning | Visión Computacional",
+      "description": "Analista de Datos con experiencia en proyectos de IA, automatización y marketing digital. Especializado en el desarrollo de chatbots, dashboards interactivos, pipelines de datos de series temporales y geoespaciales, e implementación de estrategias SEO/SEM."
+    },
+    "contact": {
+      "location": "Fortaleza - CE, Brasil",
+      "phone": "+55 85 9 9685-9051",
+      "email": "cavalcanteprofissional@outlook.com"
+    },
+    "buttons": {
+      "cv": "Currículum",
+      "view": "Ver Certificado",
+      "demo": "Demo",
+      "code": "Código"
+    },
+    "sections": {
+      "experience": "Experiencia Profesional",
+      "portfolio": "Proyectos Destacados",
+      "skills": "Habilidades Técnicas",
+      "certifications": "Certificaciones",
+      "languages": "Idiomas"
+    },
+    "portfolio": {
+      "subtitle": "Conoce algunos de mis proyectos recientes en Data Science e IA"
+    },
+    "project": {
+      "1": {
+        "title": "Dashboard de Análisis de Ventas",
+        "description": "Dashboard interactivo desarrollado con Streamlit para análisis exploratorio de datos de ventas, con filtros dinámicos y visualizaciones avanzadas."
+      },
+      "2": {
+        "title": "Chatbot con NLP",
+        "description": "Chatbot inteligente utilizando procesamiento de lenguaje natural para atención al cliente, con integración de múltiples canales."
+      },
+      "3": {
+        "title": "Sistema de Visión Computacional",
+        "description": "Sistema de detección de objetos en tiempo real utilizando YOLO para análisis de imágenes en aplicaciones industriales."
+      },
+      "4": {
+        "title": "Pipeline de Datos Geoespaciales",
+        "description": "Pipeline ETL para procesamiento y análisis de datos geoespaciales, con visualización de mapas interactivos y reportes automatizados."
+      },
+      "5": {
+        "title": "Sistema de Predicción de Series Temporales",
+        "description": "Modelo de Machine Learning para predicción de demanda y ventas utilizando técnicas avanzadas de series temporales con arquitecturas LSTM y Prophet."
+      },
+      "6": {
+        "title": "Análisis de Sentimiento con PLN",
+        "description": "Sistema completo de análisis de sentimiento para reviews de productos y feedback de clientes con visualización interactiva y reportes automatizados."
+      },
+      "7": {
+        "title": "Pipeline Modular de Question Answering",
+        "description": "Una pipeline robusta, modular y paralela para procesar y analizar respuestas de múltiples modelos de Question Answering (QA) usando la plataforma Hugging Face."
+      }
+    },
+    "experience": {
+      "1": {
+        "title": "Analista de Datos",
+        "1": "Definición del alcance y modelado de datos (DER) para un proyecto en el mercado de moda de Ceará.",
+        "2": "Recopilación, limpieza y preparación de datasets utilizando Python y bibliotecas de análisis.",
+        "3": "Realización de Análisis Exploratorio de Datos (EDA) y cálculo de estadísticas descriptivas.",
+        "4": "Generación de dashboards interactivos e informes para la alta gerencia utilizando Power BI."
+      },
+      "2": {
+        "title": "Analista de Datos",
+        "1": "Definición del alcance y modelado de datos (DER) para un proyecto en el mercado de moda de Ceará.",
+        "2": "Recopilación, limpieza y preparación de datasets utilizando Python y bibliotecas de análisis.",
+        "3": "Realización de Análisis Exploratorio de Datos (EDA) y cálculo de estadísticas descriptivas.",
+        "4": "Implementación de modelo de machine learning (Random Forest) con evaluación de métricas.",
+        "5": "Generación de dashboards interactivos e informes para la alta gerencia utilizando Streamlit."
+      },
+      "3": {
+        "title": "Analista de Marketing y Comercial",
+        "1": "Planificación y gestión de campañas digitales (Google Ads, Meta Ads) con monitoreo de KPIs.",
+        "2": "Implementación de estrategias de SEO y SEM, resultando en aumento del tráfico orgánico.",
+        "3": "Creación y edición de contenido audiovisual para redes sociales y embudos de ventas.",
+        "4": "Gestión de CRM mediante ERP interno.",
+        "5": "Apoyo al equipo comercial en la prospección y retención de clientes."
+      },
+      "4": {
+        "title": "Analista de Marketing | Asistente de Marketing",
+        "1": "Desarrollo y monitoreo de campañas promocionales.",
+        "2": "Implementación de estrategias SEO/SEM y gestión de contenido para sitio web y redes sociales.",
+        "3": "Creación de contenido gráfico y mantenimiento de los canales de comunicación digitales."
+      },
+      "5": {
+        "title": "Técnico en Informática y Redes",
+        "company": "Autónomo",
+        "1": "Ensamblaje, mantenimiento y configuración de infraestructura de TI (computadoras, servidores, redes TCP/IP, Wi-Fi).",
+        "2": "Soporte técnico remoto y presencial, instalación de software y permisos de acceso.",
+        "3": "Consultoría técnica y elaboración de propuestas para licitaciones de equipos."
+      }
+    },
+    "skills": {
+      "languages": "Lenguajes & Bibliotecas",
+      "ml": "Machine Learning",
+      "dl": "Deep Learning & Visión Computacional",
+      "platforms": "Plataformas & Herramientas",
+      "marketing": "Marketing Digital",
+      "tech": "Técnico en TI y Redes",
+      "agile": "Gestión Ágil",
+      "office": "Microsoft Office",
+      "soft": "Habilidades Interpersonales",
+      "communication": "Comunicación",
+      "teamwork": "Trabajo en Equipo",
+      "problem-solving": "Resolución de Problemas",
+      "adaptability": "Adaptabilidad",
+      "time-management": "Gestión del Tiempo",
+      "critical-thinking": "Pensamiento Crítico",
+      "creativity": "Creatividad"
+    },
+    "certifications": {
+      "subtitle": "Haga clic en los enlaces para ver los certificados"
+    },
+    "cert": {
+      "1": { "title": "Ensamblaje y Mantenimiento de Computadoras" },
+      "2": { "title": "Diseño Gráfico & Web Design" },
+      "3": { "title": "Programación de Juegos Digitales" },
+      "4": { "title": "Ciencias Sociales" },
+      "5": { "title": "Desarrollador FullStack" },
+      "6": { "title": "DevOps" },
+      "7": { "title": "Ciencia de Datos" },
+      "8": { "title": "Análisis y Desarrollo de Sistemas" },
+      "9": { "title": "Ingeniería de Software" },
+      "10": { "title": "Administración de Bases de Datos" }
+    },
+    "lang": {
+      "portuguese": "Portugués",
+      "english": "Inglés",
+      "spanish": "Español",
+      "japanese": "Japonés",
+      "level": {
+        "native": "Nativo",
+        "advanced": "Avanzado",
+        "intermediate": "Intermedio",
+        "basic": "Básico"
+      }
+    },
+    "footer": {
+      "contact": "Contáctame",
+      "message": "Siempre estoy abierto a nuevas oportunidades y colaboraciones.",
+      "rights": "Todos los derechos reservados."
+    }
+  }
+}

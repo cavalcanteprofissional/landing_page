@@ -1,0 +1,66 @@
+{
+  "skillCategories": [
+    {
+      "id": "languages",
+      "titleKey": "skills.languages",
+      "icon": "code",
+      "skills": ["Python", "SQL", "JavaScript", "HTML/CSS", "TypeScript", "Java", "C#", "C++", "PHP", "Scikit-learn", "Pandas", "Geopandas", "Django", "Plotly", "Matplotlib", "Seaborn", "NumPy", "OpenCV", "PyTorch", "NLTK"]
+    },
+    {
+      "id": "ml",
+      "titleKey": "skills.ml",
+      "icon": "brain",
+      "skills": ["Random Forest", "XGBoost", "LightGBM", "Gradient Boosting", "CatBoost", "AdaBoost", "Extra Trees", "Regressão Linear", "Ridge/Lasso", "Elastic Net", "KNN", "SVR", "MLP", "NLP", "Word2Vec", "TF-IDF", "Transformers"]
+    },
+    {
+      "id": "dl",
+      "titleKey": "skills.dl",
+      "icon": "eye",
+      "skills": ["TensorFlow/Keras", "PyTorch", "DNNs", "CNNs", "RNNs/LSTMs", "YOLO", "OpenCV", "GNU Octave"]
+    },
+    {
+      "id": "platforms",
+      "titleKey": "skills.platforms",
+      "icon": "tools",
+      "skills": ["Git/GitHub", "Docker", "Kubernetes", "AWS", "Azure", "GCP", "Oracle Cloud", "Tableau", "Power BI", "Looker", "Streamlit", "Jupyter", "VS Code", "Vercel", "Supabase", "Back4App"]
+    },
+    {
+      "id": "marketing",
+      "titleKey": "skills.marketing",
+      "icon": "bullhorn",
+      "skills": ["Illustrator", "Photoshop", "InDesign", "Premiere", "After Effects", "Adobe XD", "Audition", "LeadLovers", "MLabs", "Mailchimp", "RD Station", "WordPress", "OBS", "Canva", "CapCut", "CorelDraw", "Sony Vegas", "Facebook Ads", "Google Analytics", "Google Ads", "SEO/SEM"]
+    },
+    {
+      "id": "tech",
+      "titleKey": "skills.tech",
+      "icon": "network-wired",
+      "skills": ["TeamViewer", "AnyDesk", "Grafana", "Zabbix", "TOTVS", "COBIT", "ITIL", "CCNA", "TCP/IP", "Wi-Fi", "Servidores"]
+    },
+    {
+      "id": "agile",
+      "titleKey": "skills.agile",
+      "icon": "tasks",
+      "skills": ["Scrum", "Kanban", "Sprint", "Trello", "Asana", "Jira", "Metodologias Ágeis"]
+    },
+    {
+      "id": "office",
+      "titleKey": "skills.office",
+      "icon": "file-alt",
+      "skills": ["Microsoft Word", "Microsoft Excel", "Microsoft PowerPoint", "Power BI", "SharePoint", "Office 365"]
+    }
+  ],
+  "softSkills": {
+    "id": "soft",
+    "titleKey": "skills.soft",
+    "icon": "users",
+    "skills": [
+      { "key": "skills.communication", "value": "Comunicação" },
+      { "key": "skills.teamwork", "value": "Trabalho em Equipe" },
+      { "key": "skills.problem-solving", "value": "Resolução de Problemas" },
+      { "key": "skills.adaptability", "value": "Adaptabilidade" },
+      { "key": "skills.time-management", "value": "Gestão de Tempo" },
+      { "key": "skills.critical-thinking", "value": "Pensamento Crítico" },
+      { "key": "skills.creativity", "value": "Criatividade" }
+    ]
+  }
+}

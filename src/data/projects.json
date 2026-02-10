@@ -1,0 +1,74 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "titleKey": "project.1.title",
+      "descriptionKey": "project.1.description",
+      "tech": ["Python", "Streamlit", "Plotly", "Pandas"],
+      "demoUrl": "https://dashboardselling-xguerbqzokekuhkezhgbdx.streamlit.app/",
+      "codeUrl": "https://github.com/cavalcanteprofissional/dashboard_selling",
+      "icon": "chart-line",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "titleKey": "project.2.title",
+      "descriptionKey": "project.2.description",
+      "tech": ["Python", "NLTK", "Scikit-learn", "Flask"],
+      "demoUrl": "#",
+      "codeUrl": "https://github.com/cavalcanteprofissional",
+      "icon": "robot",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "titleKey": "project.3.title",
+      "descriptionKey": "project.3.description",
+      "tech": ["Python", "OpenCV", "YOLO", "PyTorch"],
+      "demoUrl": "#",
+      "codeUrl": "https://github.com/cavalcanteprofissional",
+      "icon": "eye",
+      "featured": false
+    },
+    {
+      "id": 4,
+      "titleKey": "project.4.title",
+      "descriptionKey": "project.4.description",
+      "tech": ["Python", "Geopandas", "PostgreSQL", "Folium"],
+      "demoUrl": "#",
+      "codeUrl": "https://github.com/cavalcanteprofissional",
+      "icon": "database",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "titleKey": "project.5.title",
+      "descriptionKey": "project.5.description",
+      "tech": ["Python", "TensorFlow", "Prophet", "ARIMA", "LSTM"],
+      "demoUrl": "#",
+      "codeUrl": "https://github.com/cavalcanteprofissional",
+      "icon": "brain",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "titleKey": "project.6.title",
+      "descriptionKey": "project.6.description",
+      "tech": ["Python", "BERT", "Scikit-learn", "NLTK", "Power BI"],
+      "demoUrl": "#",
+      "codeUrl": "https://github.com/cavalcanteprofissional",
+      "icon": "pie-chart",
+      "featured": false
+    },
+    {
+      "id": 7,
+      "titleKey": "project.7.title",
+      "descriptionKey": "project.7.description",
+      "tech": ["Python", "Streamlit", "Hugging Face", "PyTorch", "Plotly", "Pandas", "NumPy"],
+      "demoUrl": "https://appanalysis-fbvminpttqk7fthidekc5b.streamlit.app/",
+      "codeUrl": "https://github.com/cavalcanteprofissional/qa_analysis",
+      "icon": "help-circle",
+      "featured": true
+    }
+  ]
+}

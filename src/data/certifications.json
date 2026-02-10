@@ -1,0 +1,101 @@
+{
+  "certifications": [
+    {
+      "id": 10,
+      "titleKey": "cert.10.title",
+      "institution": "Faculdade Metropolitana",
+      "year": "2026",
+      "icon": "database",
+      "file": "banco_dados.pdf"
+    },
+    {
+      "id": 9,
+      "titleKey": "cert.9.title",
+      "institution": "Faculdade Metropolitana",
+      "year": "2025",
+      "icon": "terminal",
+      "file": "engenharia_software.pdf"
+    },
+    {
+      "id": 8,
+      "titleKey": "cert.8.title",
+      "institution": "Universidade de Fortaleza",
+      "year": "2025",
+      "icon": "graduation-cap",
+      "file": "ads_unifor.pdf"
+    },
+    {
+      "id": 7,
+      "titleKey": "cert.7.title",
+      "institution": "Universidade Estadual do Ceará",
+      "year": "2024",
+      "icon": "laptop-code",
+      "file": "ciencia_dados_uece.pdf"
+    },
+    {
+      "id": 6,
+      "titleKey": "cert.6.title",
+      "institution": "Ada Tech",
+      "year": "2024",
+      "icon": "code-branch",
+      "file": "devops_ada.pdf"
+    },
+    {
+      "id": 5,
+      "titleKey": "cert.5.title",
+      "institution": "Instituto Euvaldo Lodi",
+      "year": "2024",
+      "icon": "code",
+      "file": "fullstack_iel.pdf"
+    },
+    {
+      "id": 4,
+      "titleKey": "cert.4.title",
+      "institution": "Universidade Federal do Ceará",
+      "year": "2019",
+      "icon": "book-open",
+      "file": "ciencias_sociais_ufc.pdf"
+    },
+    {
+      "id": 3,
+      "titleKey": "cert.3.title",
+      "institution": "Estácio",
+      "year": "2016",
+      "icon": "gamepad",
+      "file": "pjd_estacio.pdf"
+    },
+    {
+      "id": 2,
+      "titleKey": "cert.2.title",
+      "institution": "Gracom School of Visual Effects",
+      "year": "2011",
+      "icon": "palette",
+      "file": "design_grafico.pdf"
+    },
+    {
+      "id": 1,
+      "titleKey": "cert.1.title",
+      "institution": "S.O.S. Computadores",
+      "year": "2011",
+      "icon": "wrench",
+      "file": "montagem_manutencao.pdf"
+    }
+  ],
+  "resumes": {
+    "pt": {
+      "file": "cv_br_lucas_cavalcante.pdf",
+      "label": "Currículo",
+      "downloadName": "Lucas_Cavalcante_Curriculo.pdf"
+    },
+    "en": {
+      "file": "cv_en_lucas_cavalcante.pdf",
+      "label": "Resume",
+      "downloadName": "Lucas_Cavalcante_Resume.pdf"
+    },
+    "es": {
+      "file": "cv_es_lucas_cavalcante.pdf",
+      "label": "Currículum",
+      "downloadName": "Lucas_Cavalcante_Curriculum.pdf"
+    }
+  }
+}

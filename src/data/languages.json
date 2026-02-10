@@ -1,0 +1,28 @@
+{
+  "languages": [
+    {
+      "id": "portuguese",
+      "nameKey": "lang.portuguese",
+      "levelKey": "lang.level.native",
+      "stars": 5
+    },
+    {
+      "id": "english",
+      "nameKey": "lang.english",
+      "levelKey": "lang.level.advanced",
+      "stars": 4
+    },
+    {
+      "id": "spanish",
+      "nameKey": "lang.spanish",
+      "levelKey": "lang.level.basic",
+      "stars": 2
+    },
+    {
+      "id": "japanese",
+      "nameKey": "lang.japanese",
+      "levelKey": "lang.level.basic",
+      "stars": 1
+    }
+  ]
+}
